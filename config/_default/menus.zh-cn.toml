@@ -1,0 +1,29 @@
+# config/_default/menus.zh-cn.toml
+
+
+[[main]]
+name = "文章"
+pageRef = "posts"
+weight = 10
+
+[[main]]
+name = "标签"
+pageRef = "tags"
+weight = 20
+
+[[main]]
+name = "GitHub"
+url = "https://github.com/Guanran928/Guanran928.github.io"
+weight = 30
+
+[main.params]
+icon = "github"
+showName = false
+target = "_blank"
+
+[[main]]
+identifier = "search"
+weight = 99
+[main.params]
+action = "search"
+icon = "search"

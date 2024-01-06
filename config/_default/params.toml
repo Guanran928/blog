@@ -1,0 +1,20 @@
+# config/_default/params.toml
+
+colorScheme = "ocean"
+enableSearch = true
+enableCodeCopy = true
+
+[homepage]
+layout = "profile"
+
+[header]
+#layout = "hamburger"
+
+[article]
+showBreadcrumbs = true
+showTableOfContents = true
+showWordCount = true
+
+[list]
+showBreadcrumbs = true
+showTableOfContents = true

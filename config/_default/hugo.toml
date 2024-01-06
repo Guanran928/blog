@@ -1,0 +1,8 @@
+# config/_default/config.toml
+
+baseURL = "https://Guanran928.github.io/"
+
+languageCode = 'zh-cn'
+defaultContentLanguage = 'zh-cn'
+#defaultContentLanguageInSubdir = true
+hasCJKLanguage = true
