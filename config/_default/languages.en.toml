@@ -5,7 +5,7 @@ languageName = "English"
 
 title = "Guanran928's blog."
 
-[author]
+[params.author]
 name = "Guanran928"
 image = "img/author.jpg"
 headline = "This is me, probably."
