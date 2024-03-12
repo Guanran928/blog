@@ -3,11 +3,9 @@
 languageCode = "zh-cn"
 languageName = "简体中文"
 
-title = "Guanran928's 的博客。"
+title = "Guanran928 的博客。"
 
 [params.author]
 name = "Guanran928"
 image = "img/author.jpg"
-headline = "这有可能是我。"
-bio = "我不是程序员。"
 links = [{ github = "https://github.com/Guanran928" }]

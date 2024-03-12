@@ -8,6 +8,4 @@ title = "Guanran928's blog."
 [params.author]
 name = "Guanran928"
 image = "img/author.jpg"
-headline = "This is me, probably."
-bio = "Not a developer."
 links = [{ github = "https://github.com/Guanran928" }]
