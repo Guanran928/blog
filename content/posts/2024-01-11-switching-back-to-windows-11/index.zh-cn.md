@@ -14,7 +14,6 @@ tags = ['Windows']
 
 对了，最好用 [tiny11bulider](https://github.com/ntdevlabs/tiny11builder) 构建精简版 Windows 11 的系统镜像。
 
-
 ## 安装后
 
 起码能让 Windows 11 能用点 :-)
@@ -107,7 +106,7 @@ tags = ['Windows']
 
 基于 UWP 的 Telegram 客户端。
 
-流畅丝滑，相对于官方基于 Qt 的客户端我更愿意用 Unigram。 
+流畅丝滑，相对于官方基于 Qt 的客户端我更愿意用 Unigram。
 
 ### [Cinny](https://cinny.in/)
 
