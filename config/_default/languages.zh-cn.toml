@@ -8,4 +8,7 @@ title = "Guanran928 的博客。"
 [params.author]
 name = "Guanran928"
 image = "img/author.jpg"
-links = [{ github = "https://github.com/Guanran928" }]
+links = [
+  { github = "https://github.com/Guanran928" },
+  { mastodon = "https://mastodon.ny4.dev/@nyancat" },
+]
