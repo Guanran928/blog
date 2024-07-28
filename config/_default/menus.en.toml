@@ -1,19 +1,24 @@
 # config/_default/menus.en.toml
 
 [[main]]
+name = "Services"
+pageRef = "services"
+weight = 10
+
+[[main]]
 name = "Posts"
 pageRef = "posts"
-weight = 10
+weight = 20
 
 [[main]]
 name = "Tags"
 pageRef = "tags"
-weight = 20
+weight = 30
 
 [[main]]
 name = "GitHub"
 url = "https://github.com/Guanran928/Guanran928.github.io"
-weight = 30
+weight = 40
 
 [main.params]
 icon = "github"
