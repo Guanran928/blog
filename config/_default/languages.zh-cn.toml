@@ -12,4 +12,5 @@ image = "img/author.jpg"
 links = [
   { github = "https://github.com/Guanran928" },
   { mastodon = "https://mastodon.ny4.dev/@nyancat" },
+  { email = "mailto:guanran928@outlook.com" },
 ]
