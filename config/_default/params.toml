@@ -8,7 +8,7 @@ enableCodeCopy = true
 layout = "profile"
 
 [header]
-#layout = "hamburger"
+layout = "hybrid"
 
 [article]
 showBreadcrumbs = true
@@ -18,3 +18,4 @@ showWordCount = true
 [list]
 showBreadcrumbs = true
 showTableOfContents = true
+showTaxonomies = true

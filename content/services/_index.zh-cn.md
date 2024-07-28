@@ -1,14 +1,8 @@
 +++
-title = "Selfhosted services"
-
-[cascade]
-showAuthor = false
-showDate = false
-showReadingTime = false
-showWordcount = false
+title = "自建服务"
 +++
 
-## Public
+## 公共服务
 
 ### Mumble
 tyo0.ny4.dev:64738
@@ -26,7 +20,7 @@ https://searx.ny4.dev/
 https://pb.ny4.dev/
 
 
-## Private
+## 私人服务
 
 ### Forgejo
 https://git.ny4.dev/
