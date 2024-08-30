@@ -8,7 +8,7 @@ copyright = "© 2024 Guanran928, 内容以 [CC-BY-SA-4.0](https://creativecommon
 
 [params.author]
 name = "Guanran928"
-image = "img/author.jpg"
+image = "img/author.png"
 links = [
   # or "https://github.com/Guanran928.gpg"
   { gpg = "https://git.ny4.dev/nyancat.gpg" },
