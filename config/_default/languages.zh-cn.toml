@@ -10,7 +10,14 @@ copyright = "© 2024 Guanran928, 内容以 [CC-BY-SA-4.0](https://creativecommon
 name = "Guanran928"
 image = "img/author.jpg"
 links = [
+  # or "https://github.com/Guanran928.gpg"
+  { gpg = "https://git.ny4.dev/nyancat.gpg" },
+  { email = "mailto:guanran928@outlook.com" },
+  { matrix = "https://matrix.to/#/@nyancat:ny4.dev" },
+  { forgejo = "https://git.ny4.dev/nyancat" },
   { github = "https://github.com/Guanran928" },
   { mastodon = "https://mastodon.ny4.dev/@nyancat" },
-  { email = "mailto:guanran928@outlook.com" },
+  { x-twitter = "https://x.com/Guanran928" },
+  { monkeytype = "https://monkeytype.com/profile/Guanran928" },
+  { steam = "https://steamcommunity.com/profiles/76561198855505856" },
 ]
