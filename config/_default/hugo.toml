@@ -2,5 +2,5 @@
 
 baseURL = "https://Guanran928.github.io/"
 
-defaultContentLanguage = 'zh-Hans'
+defaultContentLanguage = 'zh-cn'
 hasCJKLanguage = true
