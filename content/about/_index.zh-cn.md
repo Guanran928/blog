@@ -45,13 +45,9 @@ date = 2024-08-25T05:28:34+08:00
 |          |                                                                                                             |
 | -------- | ----------------------------------------------------------------------------------------------------------- |
 | 手机     | [Samsung Galaxy S24](https://www.gsmarena.com/samsung_galaxy_s24-12773.php)                                 |
-| 平板     | [iPad Pro, 12.9-inch (5th generation)](https://support.apple.com/en-us/111896) (吃灰中...)                  |
 | 笔记本   | [Lenovo ThinkPad X1 Carbon (Gen 12)](<https://wiki.archlinux.org/title/Lenovo_ThinkPad_X1_Carbon_(Gen_12)>) |
-| 游戏本   | Lenovo Legion Y7000                                                                                         |
 | 主机     | Microsoft Xbox One S (吃灰中...)                                                                            |
-| 显示器   | ASUS TUF GAMING VG27AQML1A                                                                                  |
 | 鼠标     | Logitech G Pro X Superlight 2                                                                               |
-| 键盘     | Keychron Q11 QMK (w/ Dvorak)                                                                                |
 | 耳机     | MOONDROP CHU II                                                                                             |
 | 物理密钥 | YubiKey 5C NFC                                                                                              |
 
