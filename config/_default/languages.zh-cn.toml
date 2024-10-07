@@ -15,6 +15,7 @@ links = [
   { gpg = "https://git.ny4.dev/nyancat.gpg" },
   { email = "mailto:guanran928@outlook.com" },
   { matrix = "https://matrix.to/#/@nyancat:ny4.dev" },
+  { telegram = "https://t.me/guanranwang" },
 
   # dev
   { forgejo = "https://git.ny4.dev/nyancat" },
