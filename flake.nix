@@ -37,6 +37,8 @@
           packages = with pkgs; [
             hugo
             go
+
+            nodePackages.prettier
           ];
         };
       }
