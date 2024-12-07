@@ -44,10 +44,9 @@ tags = ['Fonts']
 | Font            | Website                                                                        | Google Fonts                                        |
 | --------------- | ------------------------------------------------------------------------------ | --------------------------------------------------- |
 | Source Han [^1] | https://fonts.adobe.com/fonts/source-han-sans-simplified-chinese#fonts-section | https://fonts.google.com/noto/specimen/Noto+Sans+SC |
+| IBM Plex Sans   | https://www.npmjs.com/package/@ibm/plex-sans-sc                                | N/A                                                 |
 
-[^1]:
-    Source Han shares the same set of glyphs with Noto Sans CJK and Sarasa Gothic, so the rest are not mentioned.
-    There's ALSO IBM Plex JP, but I'm not sure if it shares the same set of glyphs with Source Han.
+[^1]: Source Han shares the same set of glyphs with Noto Sans CJK and Sarasa Gothic, so the rest are not mentioned.
 
 ### Emoji
 

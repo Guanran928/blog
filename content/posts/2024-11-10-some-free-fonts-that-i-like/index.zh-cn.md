@@ -44,6 +44,7 @@ tags = ['字体']
 | 字体          | 网站                                                                           | Google Fonts                                        |
 | ------------- | ------------------------------------------------------------------------------ | --------------------------------------------------- |
 | 思源黑体 [^1] | https://fonts.adobe.com/fonts/source-han-sans-simplified-chinese#fonts-section | https://fonts.google.com/noto/specimen/Noto+Sans+SC |
+| IBM Plex Sans | https://www.npmjs.com/package/@ibm/plex-sans-sc                                | N/A                                                 |
 
 [^1]: 思源黑体与 Noto Sans CJK 共用同一套字形，故不赘述后者。
 
