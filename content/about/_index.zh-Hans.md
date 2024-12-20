@@ -29,14 +29,16 @@ date = 2024-08-25T05:28:34+08:00
 - gnumake
 - html / css
 - markdown
-- nix
-- python3
 
 一知半解：
 
 - golang
-- js
+- js/ts
 - lua
+- nix
+- python3
+- react
+- tailwindcss
 
 ## 在役设备
 
@@ -82,7 +84,7 @@ date = 2024-08-25T05:28:34+08:00
 
 ### 软件与服务
 
-主力 IM 是 Matrix，张小龙🈚️🐴，不用 QQ，Discord，Telegram 之类的软件。
+主力 IM 大概是 Matrix 和 Telegram，张小龙🈚️🐴，不用 QQ，Discord 之类的软件。
 
 浏览器是火狐，因为用的是 Linux。同时移动端能加插件（比如 uBlock Origin）很爽。
 
@@ -94,7 +96,7 @@ date = 2024-08-25T05:28:34+08:00
 
 音乐平台是 Spotify，偶尔用 YouTube[^yt] 和 SoundCloud，Apple Music 和 Jellyfin 在吃灰。
 
-常听的音乐风格：DnB、Hardcore、J-rock、Mandopop
+常听的音乐风格：Electronic, Mandopop
 
 [^yt]: 是 YouTube，而不是 YouTube Music！
 
@@ -102,17 +104,17 @@ date = 2024-08-25T05:28:34+08:00
 
 目前加起来看过不到十部，平时想起来看动漫的时间不多，也没有喜欢的二次元人物。
 
-暂时还没变成真正的死宅（基本上：我 = 死宅 - 二次元）。
+~~暂时还没变成真正的死宅（基本上：我 = 死宅 - 二次元）。~~
 
 ### 还在玩的游戏
 
 好像都是竞技游戏？我之前其实玩的游戏都是休闲向的...
 
-| 时长   | 游戏                                                 |
-| ------ | ---------------------------------------------------- |
-| 2000h+ | cs2 (10k mm elo)                                     |
-| 50h+   | [osu!](https://osu.ppy.sh/users/22963178) (2.1k pp.) |
-| 10h+   | valorant, bf1, bf5, pubg                             |
+| 时长   | 游戏                                                                       |
+| ------ | -------------------------------------------------------------------------- |
+| 2000h+ | cs2 (10k mm elo)                                                           |
+| 50h+   | [osu!](https://osu.ppy.sh/users/22963178) (std: 2.5k pp., mania: 1.0k pp.) |
+| 10h+   | valorant, bf1, bf5, pubg                                                   |
 
 ### 弃坑的游戏
 
