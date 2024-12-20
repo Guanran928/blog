@@ -4,8 +4,8 @@ title = "Selfhosted services"
 
 ## Public
 
-| Name                     | URL                           |
-| ------------------------ | ----------------------------- |
+| Name                      | URL                                                |
+| ------------------------- | -------------------------------------------------- |
 | IP checker                | https://ip.ny4.dev/                                |
 | Mumble                    | [tyo0.ny4.dev:64738](mumble://tyo0.ny4.dev:64738)  |
 | Ntfy                      | https://ntfy.ny4.dev/                              |
