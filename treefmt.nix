@@ -8,4 +8,8 @@
     statix.enable = true;
     taplo.enable = true;
   };
+
+  settings.formatter.prettier.excludes = [
+    "pnpm-lock.yaml"
+  ];
 }
