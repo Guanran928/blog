@@ -2,6 +2,9 @@ baseURL = 'https://blog.ny4.dev/'
 hasCJKLanguage = true
 defaultContentLanguage = 'zh-Hans'
 
+[minify]
+minifyOutput = true
+
 [module]
 [module.hugoVersion]
 extended = false
