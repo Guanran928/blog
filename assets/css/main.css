@@ -54,7 +54,7 @@
   code,
   pre,
   blockquote {
-    @apply bg-white dark:bg-black;
+    @apply !bg-white dark:!bg-black;
   }
 
   pre {
