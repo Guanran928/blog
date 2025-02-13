@@ -2,6 +2,7 @@
 title = '在 AWS Lightsail 上安装并使用 NixOS && 使用 Colmena 实现远程部署'
 date = 2024-04-23T01:14:34+08:00
 tags = ['NixOS', 'VPS']
+summary = '最近把自己的 VPS 从 Vultr 换成了 AWS 的 Lightsail，决定正好装上我正在用的 NixOS'
 +++
 
 # 序

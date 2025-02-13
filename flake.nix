@@ -36,9 +36,8 @@
         devShells.default = pkgs.mkShellNoCC {
           packages = with pkgs; [
             hugo
-            go
-
-            nodePackages.prettier
+            nodejs
+            pnpm
           ];
         };
       }

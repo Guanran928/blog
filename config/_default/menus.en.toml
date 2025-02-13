@@ -1,33 +1,14 @@
-# config/_default/menus.en.toml
+[[main]]
+name = 'Posts'
+pageRef = '/'
+weight = 10
 
 [[main]]
-name = "Services"
-pageRef = "services"
+name = 'Tags'
+pageRef = '/tags'
+weight = 20
+
+[[main]]
+name = 'Services'
+pageRef = '/services'
 weight = 30
-
-[[main]]
-name = "Posts"
-pageRef = "posts"
-weight = 40
-
-[[main]]
-name = "Tags"
-pageRef = "tags"
-weight = 50
-
-[[main]]
-name = "GitHub"
-url = "https://github.com/Guanran928/Guanran928.github.io"
-weight = 60
-
-[main.params]
-icon = "github"
-showName = false
-target = "_blank"
-
-[[main]]
-identifier = "search"
-weight = 99
-[main.params]
-action = "search"
-icon = "search"

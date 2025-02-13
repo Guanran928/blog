@@ -2,6 +2,7 @@
 title = '换回 Windows 11 && 一些我常用的软件'
 date = 2024-01-11T07:11:37+08:00
 tags = ['Windows']
+summary = "最近在 NixOS 上遇到点小问题和麻烦，所以想着干脆换回 \"it just works\" 的操作系统 —— Windows 11（双系统）。"
 +++
 
 ## 序

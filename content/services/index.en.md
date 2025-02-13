@@ -1,10 +1,10 @@
 +++
-title = "自建服务"
+title = 'Selfhosted services'
 +++
 
-## 公共服务
+## Public
 
-| 名称                      | 网址                                               |
+| Name                      | URL                                                |
 | ------------------------- | -------------------------------------------------- |
 | IP checker                | https://ip.ny4.dev/                                |
 | Mumble                    | [tyo0.ny4.dev:64738](mumble://tyo0.ny4.dev:64738)  |
@@ -14,9 +14,9 @@ title = "自建服务"
 | Wastebin                  | https://pb.ny4.dev/                                |
 | [NSFW] Danbooru image bot | [@danbooru_img_bot](https://t.me/danbooru_img_bot) |
 
-## 私人服务
+## Private
 
-| 名称             | 网址                      |
+| Name             | URL                       |
 | ---------------- | ------------------------- |
 | Forgejo          | https://git.ny4.dev/      |
 | Keycloak         | https://id.ny4.dev/       |

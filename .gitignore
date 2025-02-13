@@ -16,3 +16,6 @@ hugo.linux
 
 # Direnv
 /.direnv
+
+# JS
+/node_modules
