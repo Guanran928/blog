@@ -51,13 +51,18 @@
     @apply px-2 py-2 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200;
   }
 
+  code,
+  pre,
+  blockquote {
+    @apply bg-white dark:bg-black;
+  }
+
   pre {
     @apply px-2 overflow-x-auto;
   }
 
-  code,
-  pre {
-    @apply bg-white dark:bg-black;
+  blockquote {
+    @apply border-l-2 px-2;
   }
 
   .article h1,
