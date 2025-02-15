@@ -16,6 +16,6 @@ blogURL="https://shadowrz.github.io/blog/" >}}
 
 {{< friend
 friendImage="https://avatars.githubusercontent.com/u/34574198"
-blogName="李浩奇"
+blogName="李皓奇"
 blogDescription="岂有文章倾社稷，从来佞幸覆乾坤。"
 blogURL="https://liolok.com/zhs/" >}}
