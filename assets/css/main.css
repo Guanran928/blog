@@ -12,11 +12,15 @@
   }
 
   header {
-    @apply border-neutral-800 border-b pb-1 mb-2;
+    @apply border-neutral-700 border-b pb-1 mb-2;
   }
 
   footer {
-    @apply border-neutral-800 border-t pt-1 mt-2;
+    @apply border-neutral-700 border-t pt-1 mt-2;
+  }
+
+  hr {
+    @apply text-neutral-700;
   }
 
   h1 {
