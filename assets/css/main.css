@@ -40,7 +40,7 @@
   }
 
   table {
-    @apply block overflow-x-auto md:table min-w-full divide-y divide-gray-200 dark:divide-neutral-700;
+    @apply block overflow-x-auto min-w-full divide-y divide-gray-200 dark:divide-neutral-700;
   }
 
   tbody {
