@@ -18,8 +18,8 @@ importers:
         specifier: ^0.0.15
         version: 0.0.15(prettier@3.5.2)
       tailwindcss:
-        specifier: ^4.0.9
-        version: 4.0.9
+        specifier: ^4.0.12
+        version: 4.0.12
 
 packages:
 
@@ -311,6 +311,9 @@ packages:
     engines: {node: '>=14'}
     hasBin: true
 
+  tailwindcss@4.0.12:
+    resolution: {integrity: sha512-bT0hJo91FtncsAMSsMzUkoo/iEU0Xs5xgFgVC9XmdM9bw5MhZuQFjPNl6wxAE0SiQF/YTZJa+PndGWYSDtuxAg==}
+
   tailwindcss@4.0.9:
     resolution: {integrity: sha512-12laZu+fv1ONDRoNR9ipTOpUD7RN9essRVkX36sjxuRUInpN7hIiHN4lBd/SIFjbISvnXzp8h/hXzmU8SQQYhw==}
 
@@ -543,6 +546,8 @@ snapshots:
       ulid: 2.3.0
 
   prettier@3.5.2: {}
+
+  tailwindcss@4.0.12: {}
 
   tailwindcss@4.0.9: {}
 
