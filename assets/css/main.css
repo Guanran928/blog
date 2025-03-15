@@ -23,18 +23,6 @@
     @apply text-neutral-700;
   }
 
-  h1 {
-    @apply text-2xl font-bold;
-  }
-
-  h2 {
-    @apply text-xl font-bold;
-  }
-
-  h3 {
-    @apply text-lg font-bold;
-  }
-
   a {
     @apply text-blue-500 underline;
   }
@@ -67,6 +55,20 @@
 
   blockquote {
     @apply border-l-2 px-2;
+  }
+
+  /* TODO: use @tailwindcss/typography */
+  /* https://github.com/tailwindlabs/tailwindcss-typography */
+  .article h1 {
+    @apply text-2xl font-bold;
+  }
+
+  .article h2 {
+    @apply text-xl font-bold;
+  }
+
+  .article h3 {
+    @apply text-lg font-bold;
   }
 
   .article h1,

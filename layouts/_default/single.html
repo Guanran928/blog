@@ -1,6 +1,6 @@
 {{ define "main" }}
   <div class="mb-4">
-    <h1>{{ .Title }}</h1>
+    <h1 class="text-2xl font-bold">{{ .Title }}</h1>
 
     {{ with .Params.date }}
       {{ $dateMachine := . | time.Format "2006-01-02T15:04:05-07:00" }}
