@@ -17,7 +17,10 @@
     </ul>
     <select aria-label="Language" onchange="location = this.value;">
       {{ range $page.Sites }}
-        <option value="{{ .Home.RelPermalink }}" {{ if eq $page.Site.Language.Lang .Language.Lang }}selected{{ end }}>
+        <option
+          value="{{ .Home.RelPermalink }}"
+          {{ if eq $page.Site.Language.Lang .Language.Lang }}selected{{ end }}
+        >
           {{ .Language.LanguageName }}
         </option>
       {{ end }}
