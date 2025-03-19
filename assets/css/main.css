@@ -43,10 +43,8 @@
     @apply px-2 py-2 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200;
   }
 
-  code,
-  pre,
   blockquote {
-    @apply !bg-white dark:!bg-black;
+    @apply bg-white dark:bg-black;
   }
 
   pre {

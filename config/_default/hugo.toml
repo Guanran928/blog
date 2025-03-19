@@ -5,6 +5,10 @@ defaultContentLanguage = 'zh-Hans'
 [minify]
 minifyOutput = true
 
+[markup]
+[markup.highlight]
+style = 'fruity'
+
 [module]
 [module.hugoVersion]
 extended = false
