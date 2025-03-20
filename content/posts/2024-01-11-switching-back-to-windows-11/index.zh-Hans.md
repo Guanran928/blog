@@ -25,7 +25,7 @@ summary = "最近在 NixOS 上遇到点小问题和麻烦，所以想着干脆�
 
 - 打开 DoH (DNS over HTTPS)
 
-- 关闭 “快速启动” (https://wiki.archlinux.org/title/Dual_boot_with_Windows#Fast_Startup_and_hibernation)
+- 关闭“快速启动” (https://wiki.archlinux.org/title/Dual_boot_with_Windows#Fast_Startup_and_hibernation)
 
 - 设置 Windows 的 UTC 时区 (https://wiki.archlinux.org/title/System_time#UTC_in_Microsoft_Windows)
 

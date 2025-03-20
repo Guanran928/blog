@@ -1,5 +1,5 @@
 +++
-title = 'Switching back to Windows 11 && Softwares that I use'
+title = 'Switching back to Windows 11 && Software that I use'
 date = 2024-01-11T07:11:37+08:00
 tags = ['Windows']
 summary = "Recently I've dealt with a lot of bugs/problems on my NixOS installation, and I've decided to switch to another operating system that \"just works\" -- (Dual booting) Windows 11"
