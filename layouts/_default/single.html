@@ -2,18 +2,26 @@
   <div class="mb-4">
     <h1 class="text-2xl font-bold">{{ .Title }}</h1>
 
-    <span class="text-sm text-neutral-600 dark:text-neutral-400">
+    <div class="text-sm text-neutral-600 dark:text-neutral-400">
       {{ with .Params.date }}
         {{ $dateMachine := . | time.Format "2006-01-02T15:04:05-07:00" }}
         {{ $dateHuman := . | time.Format ":date_long" }}
         <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
       {{ end }}
       | {{ .ReadingTime }} minutes | {{ .WordCount }} words
-    </span>
+    </div>
+    <div>
+      {{ with .Param "tags" }}
+        {{ range $index, $tag := (. | sort) }}
+          {{ with $.Site.GetPage (printf "/%s/%s" "tags" $tag) }}
+            <a href="{{ .Permalink }}">#{{ $tag }}</a>
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    </div>
   </div>
 
-  <div class="article">
+  <div class="prose prose-neutral dark:prose-invert">
     {{ .Content }}
-    {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
   </div>
 {{ end }}
