@@ -1,5 +1,6 @@
 +++
 title = '关于我'
+showMetadata = false
 +++
 
 初中生，NixOS 用户。

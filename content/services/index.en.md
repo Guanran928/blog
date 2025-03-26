@@ -1,5 +1,6 @@
 +++
 title = 'Selfhosted services'
+showMetadata = false
 +++
 
 ## Public

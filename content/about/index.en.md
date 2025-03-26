@@ -1,5 +1,6 @@
 +++
 title = 'About Me'
+showMetadata = false
 +++
 
 ## How to contact me

@@ -1,5 +1,6 @@
 +++
 title = '朋友们'
+showMetadata = false
 +++
 
 {{< friend
