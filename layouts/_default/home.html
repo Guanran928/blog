@@ -11,8 +11,15 @@
             {{ $dateHuman := . | time.Format ":date_long" }}
             <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
           {{ end }}
-          | {{ .ReadingTime }} minutes
+          {{ with .Param "tags" }}
+            {{ range $index, $tag := (. | sort) }}
+              {{ with $.Site.GetPage (printf "/%s/%s" "tags" $tag) }}
+                <a href="{{ .Permalink }}">#{{ $tag }}</a>
+              {{ end }}
+            {{ end }}
+          {{ end }}
         </span>
+
         <p>{{ .Params.Summary | markdownify }}</p>
       </article>
     {{ end }}
