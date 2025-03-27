@@ -1,0 +1,15 @@
+{{ define "main" }}
+  <ul class="space-y-2">
+    {{ range .Pages }}
+      <li class="flex flex-col">
+        <a href="{{ .RelPermalink }}" class="text-xl font-bold">
+          {{ .Title }}
+        </a>
+
+        <span class="text-neutral-600 dark:text-neutral-400 text-sm">
+          {{ .Pages.Len }} articles
+        </span>
+      </li>
+    {{ end }}
+  </ul>
+{{ end }}

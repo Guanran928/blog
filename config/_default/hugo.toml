@@ -9,6 +9,10 @@ minifyOutput = true
 [markup.highlight]
 style = 'fruity'
 
+[taxonomies]
+tag = "tags"
+category = "categories"
+
 [module]
 [module.hugoVersion]
 extended = false
