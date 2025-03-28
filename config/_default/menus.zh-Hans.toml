@@ -1,6 +1,6 @@
 [[main]]
 name = '文章'
-pageRef = '/'
+pageRef = '/posts'
 weight = 10
 
 [[main]]

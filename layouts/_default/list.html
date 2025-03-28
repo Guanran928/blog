@@ -1,8 +1,28 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
+  <h1 class="text-3xl font-bold mb-2">{{ .Title }}</h1>
   {{ .Content }}
-  {{ range .Pages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-    {{ .Summary }}
-  {{ end }}
+  <div class="space-y-4">
+    {{ range .Pages }}
+      <article>
+        <h1 class="font-bold">
+          <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+        </h1>
+        <span class="text-neutral-600 dark:text-neutral-400 text-sm">
+          {{ with .Params.date }}
+            {{ $dateMachine := . | time.Format "2006-01-02T15:04:05-07:00" }}
+            {{ $dateHuman := . | time.Format ":date_long" }}
+            <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+          {{ end }}
+          {{ with .Param "tags" }}
+            {{ range $index, $tag := (. | sort) }}
+              {{ with $.Site.GetPage (printf "/%s/%s" "tags" $tag) }}
+                <a href="{{ .Permalink }}">#{{ $tag }}</a>
+              {{ end }}
+            {{ end }}
+          {{ end }}
+        </span>
+        <p>{{ .Params.Summary | markdownify }}</p>
+      </article>
+    {{ end }}
+  </div>
 {{ end }}

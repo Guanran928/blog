@@ -1,0 +1,13 @@
+links = [
+  { name = "GPG", username = "91F97D9ED12639CF", url = "https://git.ny4.dev/nyancat.gpg" },
+  { name = "Email", username = "guanran928@outlook.com", url = "mailto:guanran928@outlook.com" },
+  { name = "Matrix", username = "@nyancat:ny4.dev", url = "https://matrix.to/#/@nyancat:ny4.dev" },
+  { name = "Telegram", username = "@guanranwang", url = "https://t.me/guanranwang" },
+  { name = "Forgejo", username = "@nyancat", url = "https://git.ny4.dev/nyancat" },
+  { name = "GitHub", username = "@guanran928", url = "https://github.com/guanran928" },
+  { name = "Mastodon", username = "@nyancat@masodon.ny4.dev", url = "https://mastodon.ny4.dev/@nyancat" },
+  { name = "Twitter", username = "@guanran928", url = "https://x.com/guanran928" },
+  { name = "Last.fm", username = "@guanran928", url = "https://www.last.fm/user/guanran928" },
+  { name = "Monkeytype", username = "@guanran928", url = "https://monkeytype.com/profile/guanran928" },
+  { name = "Steam", username = "d-.-b", url = "https://steamcommunity.com/profiles/76561198855505856" },
+]

@@ -1,27 +1,56 @@
 {{ define "main" }}
   <div class="space-y-4">
-    {{ range where .Site.RegularPages "Section" "posts" }}
-      <article>
-        <h1 class="font-bold">
-          <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-        </h1>
-        <span class="text-neutral-600 dark:text-neutral-400 text-sm">
-          {{ with .Params.date }}
-            {{ $dateMachine := . | time.Format "2006-01-02T15:04:05-07:00" }}
-            {{ $dateHuman := . | time.Format ":date_long" }}
-            <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
-          {{ end }}
-          {{ with .Param "tags" }}
-            {{ range $index, $tag := (. | sort) }}
-              {{ with $.Site.GetPage (printf "/%s/%s" "tags" $tag) }}
-                <a href="{{ .Permalink }}">#{{ $tag }}</a>
+    <div>
+      <h1 class="text-3xl font-bold mb-2">Latest Posts</h1>
+      <div class="space-y-4">
+        {{ range first 3 (where .Site.RegularPages "Section" "posts") }}
+          <article>
+            <h1 class="font-bold">
+              <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+            </h1>
+            <span class="text-neutral-600 dark:text-neutral-400 text-sm">
+              {{ with .Params.date }}
+                {{ $dateMachine := . | time.Format "2006-01-02T15:04:05-07:00" }}
+                {{ $dateHuman := . | time.Format ":date_long" }}
+                <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
               {{ end }}
-            {{ end }}
-          {{ end }}
-        </span>
+              {{ with .Param "tags" }}
+                {{ range $index, $tag := (. | sort) }}
+                  {{ with $.Site.GetPage (printf "/%s/%s" "tags" $tag) }}
+                    <a href="{{ .Permalink }}">#{{ $tag }}</a>
+                  {{ end }}
+                {{ end }}
+              {{ end }}
+            </span>
 
-        <p>{{ .Params.Summary | markdownify }}</p>
-      </article>
-    {{ end }}
+            <p>{{ .Params.Summary | markdownify }}</p>
+          </article>
+        {{ end }}
+      </div>
+    </div>
+    <div>
+      <h1 class="text-3xl font-bold mb-2">Connect</h1>
+      <!-- TODO: Add icons to each item -->
+      {{ with .Site.Params.links }}
+        <div class="flex flex-wrap gap-4">
+          {{ range . }}
+            <a
+              class="flex flex-col size-36 p-3 border-2 bg-neutral-200 dark:bg-neutral-800 border-neutral-400 dark:border-neutral-600 text-black dark:text-white"
+              href="{{ .url | safeURL }}"
+              target="_blank"
+              aria-label="{{ .username | title }}"
+              rel="me noopener noreferrer"
+            >
+              <div class="font-bold">
+                {{ .name }}
+              </div>
+              <div class="w-full text-sm break-words">
+                {{ .username }}
+              </div>
+            </a>
+          {{ end }}
+        </div>
+      {{ end }}
+    </div>
   </div>
 {{ end }}
