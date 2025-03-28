@@ -9,7 +9,9 @@
           {{ $dateHuman := . | time.Format ":date_long" }}
           <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
         {{ end }}
-        | {{ .ReadingTime }} minutes | {{ .WordCount }} words
+        | {{ .ReadingTime }} {{ i18n "minute" }} |
+        {{ .WordCount }}
+        {{ i18n "word" }}
       </div>
     {{ end }}
 

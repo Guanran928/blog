@@ -1,6 +1,6 @@
 <h{{ .Level }} id="{{ .Anchor | safeURL }}" class="relative group">
   <span class="not-prose absolute w-6 -start-6 transition-opacity opacity-0 group-hover:opacity-100">
-    <a href="#{{ .Anchor | safeURL }}" aria-label="{{ i18n "article.anchor_label" }}">#</a>
+    <a href="#{{ .Anchor | safeURL }}">#</a>
   </span>
   {{ .Text | safeHTML }}
 </h{{ .Level }}>

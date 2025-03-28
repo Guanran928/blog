@@ -15,7 +15,10 @@
     <ul class="flex gap-2">
       {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
     </ul>
-    <select aria-label="Language" onchange="location = this.value;">
+    <select
+      aria-label="{{ i18n "language" }}"
+      onchange="location = this.value;"
+    >
       {{ range $page.Sites }}
         <option
           value="{{ .Home.RelPermalink }}"
