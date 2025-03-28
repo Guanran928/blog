@@ -1,6 +1,7 @@
 baseURL = 'https://blog.ny4.dev/'
 hasCJKLanguage = true
 defaultContentLanguage = 'zh-Hans'
+enableRobotsTXT = true
 
 [minify]
 minifyOutput = true
