@@ -5,20 +5,20 @@ weight = 10
 
 [[main]]
 name = '标签'
-pageRef = 'tags'
+pageRef = '/tags'
 weight = 20
 
 [[main]]
 name = '服务'
-pageRef = 'services'
+pageRef = '/services'
 weight = 30
 
 [[main]]
 name = '友链'
-pageRef = 'friends'
+pageRef = '/friends'
 weight = 40
 
 [[main]]
 name = '关于我'
-pageRef = 'about'
+pageRef = '/about'
 weight = 50
