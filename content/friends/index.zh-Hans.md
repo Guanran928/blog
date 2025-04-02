@@ -4,7 +4,7 @@ showMetadata = false
 +++
 
 {{< friend
-friendImage="https://lab.gb0.dev/img/avatar_hu18259482115027619534.png"
+friendImage="https://lab.gb0.dev/img/logo@square.png"
 blogName="Mare_Infinitus"
 blogDescription="此处会不定时产生包含大量废话的日志文件"
 blogURL="https://lab.gb0.dev/" >}}
