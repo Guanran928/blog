@@ -5,9 +5,9 @@
       <div class="space-y-4">
         {{ range first 3 (where .Site.RegularPages "Section" "posts") }}
           <article>
-            <h1 class="font-bold">
+            <h2 class="font-bold">
               <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-            </h1>
+            </h2>
             <span class="text-neutral-600 dark:text-neutral-400 text-sm">
               {{ with .Params.date }}
                 {{ $dateMachine := . | time.Format "2006-01-02T15:04:05-07:00" }}
