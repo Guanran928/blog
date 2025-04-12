@@ -38,6 +38,9 @@
             hugo
             nodejs
             pnpm
+
+            typos
+            autocorrect
           ];
         };
       }
