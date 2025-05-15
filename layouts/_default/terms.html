@@ -1,7 +1,7 @@
 {{ define "main" }}
-  <ul class="space-y-2">
+  <div class="space-y-2 space-x-4 flex flex-wrap justify-between">
     {{ range .Pages }}
-      <li class="flex flex-col">
+      <div class="flex flex-col">
         <a href="{{ .RelPermalink }}" class="text-xl font-bold">
           {{ .Title }}
         </a>
@@ -10,7 +10,7 @@
           {{ .Pages.Len }}
           {{ i18n "article" }}
         </span>
-      </li>
+      </div>
     {{ end }}
-  </ul>
+  </div>
 {{ end }}
