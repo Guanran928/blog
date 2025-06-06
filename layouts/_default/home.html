@@ -1,14 +1,14 @@
 {{ define "main" }}
   <div class="space-y-4">
     <div>
-      <h1 class="text-3xl font-bold mb-2">{{ i18n "latest_posts" }}</h1>
+      <h1 class="mb-2 text-3xl font-bold">{{ i18n "latest_posts" }}</h1>
       <div class="space-y-4">
         {{ range first 3 (where .Site.RegularPages "Section" "posts") }}
           <article>
             <h2 class="font-bold">
               <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
             </h2>
-            <span class="text-neutral-600 dark:text-neutral-400 text-sm">
+            <span class="text-sm text-neutral-600 dark:text-neutral-400">
               {{ with .Params.date }}
                 {{ $dateMachine := . | time.Format "2006-01-02T15:04:05-07:00" }}
                 {{ $dateHuman := . | time.Format ":date_long" }}
@@ -29,13 +29,13 @@
       </div>
     </div>
     <div>
-      <h1 class="text-3xl font-bold mb-2">{{ i18n "connect" }}</h1>
+      <h1 class="mb-2 text-3xl font-bold">{{ i18n "connect" }}</h1>
       <!-- TODO: Add icons to each item -->
       {{ with .Site.Params.links }}
         <div class="flex flex-wrap gap-4">
           {{ range . }}
             <a
-              class="flex flex-col size-36 p-3 border-2 bg-neutral-200 dark:bg-neutral-800 border-neutral-400 dark:border-neutral-600 text-black dark:text-white"
+              class="flex size-36 flex-col border-2 border-neutral-400 bg-neutral-200 p-3 text-black dark:border-neutral-600 dark:bg-neutral-800 dark:text-white"
               href="{{ .url | safeURL }}"
               target="_blank"
               aria-label="{{ .username | title }}"

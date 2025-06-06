@@ -1,6 +1,6 @@
 {{ define "main" }}
   <div class="mb-4">
-    <h1 class="text-3xl font-bold mb-2">{{ .Title }}</h1>
+    <h1 class="mb-2 text-3xl font-bold">{{ .Title }}</h1>
 
     {{ if (.Param "showMetadata" | default true) }}
       <div class="text-sm text-neutral-600 dark:text-neutral-400">
