@@ -13,10 +13,8 @@ showMetadata = false
 
 ## 语言
 
-- 熟练：中文[^cn]/英语
+- 熟练：中文/英语
 - 在学：粤语/日语
-
-[^cn]: 自己的中文其实一般般。我自己的博客总是看着像是机翻的。
 
 ## 编程语言
 
@@ -24,21 +22,24 @@ showMetadata = false
 
 滥竽充数：
 
-- bash
-- batch
-- gnumake
-- html / css
-- markdown
+- ![Bash Script](https://img.shields.io/badge/bash_script-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white)
+- ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+- ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+- ![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white)
+- ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+- ![YAML](https://img.shields.io/badge/yaml-%23ffffff.svg?style=for-the-badge&logo=yaml&logoColor=151515)
 
-一知半解：
+一知半解（~~指完全不懂~~）：
 
-- golang
-- js/ts
-- lua
-- nix
-- python3
-- react
-- tailwindcss
+- ![Go](https://img.shields.io/badge/go-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white)
+- ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+- ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
+- ![Lua](https://img.shields.io/badge/lua-%232C2D72.svg?style=for-the-badge&logo=lua&logoColor=white)
+- ![Nix](https://img.shields.io/badge/NIX-5277C3.svg?style=for-the-badge&logo=NixOS&logoColor=white)
+- ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+- ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+- ![Rust](https://img.shields.io/badge/rust-%23000000.svg?style=for-the-badge&logo=rust&logoColor=white)
+- ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 
 ## 在役设备
 
@@ -51,7 +52,7 @@ showMetadata = false
 | 主机     | Microsoft Xbox One S (吃灰中...)                                                                            |
 | 鼠标     | Logitech G Pro X Superlight 2                                                                               |
 | 耳机     | MOONDROP CHU II                                                                                             |
-| 物理密钥 | YubiKey 5C NFC                                                                                              |
+| 物理密钥 | YubiKey 5C NFC + CanoKey Canary                                                                             |
 
 ## 爱好
 
@@ -61,7 +62,8 @@ showMetadata = false
 
 不喜欢虚拟货币、Web3、AI[^ai]、短视频。
 
-[^ai]: 我很反感的是大公司将 AI 整合进一些毫无关系的应用中，而不是 AI 本身。
+[^ai]:
+    我很反感的是大公司为了盈利将 AI 整合进一些毫无关系的应用中，而不是 AI 本身。
 
     - Firefox: https://androiddev.social/@Xzan/112593527677083561
     - Google: https://blog.google/products/search/generative-ai-google-search-may-2024/
@@ -84,7 +86,7 @@ showMetadata = false
 
 ### 软件与服务
 
-主力 IM 大概是 Matrix 和 Telegram，张小龙🈚️🐴，不用 QQ，Discord 之类的软件。
+主力 IM 大概是 Matrix 和 Telegram，张小龙🈚️🐴。
 
 浏览器是火狐，因为用的是 Linux。同时移动端能加插件（比如 uBlock Origin）很爽。
 
@@ -94,7 +96,7 @@ showMetadata = false
 
 ### 音乐
 
-音乐平台是 Spotify，偶尔用 YouTube[^yt] 和 SoundCloud，Apple Music 和 Jellyfin 在吃灰。
+音乐平台是 Spotify，偶尔用 YouTube[^yt] 和 SoundCloud。
 
 常听的音乐风格：Electronic, Mandopop
 
@@ -113,8 +115,8 @@ showMetadata = false
 | 游戏                                      | 时长  |
 | ----------------------------------------- | ----- |
 | CS2                                       | 2000h |
+| Valorant                                  | 200h  |
 | [osu!](https://osu.ppy.sh/users/22963178) | 100h  |
-| Valorant                                  | 100h  |
 
 ### 弃坑的游戏
 
@@ -124,7 +126,7 @@ showMetadata = false
 | ---------------------------------------------------- | ----- |
 | [Minecraft](https://namemc.com/profile/Guanran928.1) | 2000h |
 | Forza Horizon 4                                      | 100h  |
-| Cytus2, Phigros                                      | 50h   |
+| Cytus 2, Phigros                                     | 50h   |
 
 ## 写博客的目的
 
