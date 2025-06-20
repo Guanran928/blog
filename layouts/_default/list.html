@@ -4,7 +4,9 @@
   <div class="space-y-4">
     {{ range .Pages }}
       <article>
-        <h2 class="font-bold">
+        <h2
+          class="font-bold before:mr-2 before:text-blue-500 before:content-['#']"
+        >
           <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
         </h2>
         <span class="text-sm text-neutral-600 dark:text-neutral-400">

@@ -5,7 +5,9 @@
       <div class="space-y-4">
         {{ range first 3 (where .Site.RegularPages "Section" "posts") }}
           <article>
-            <h2 class="font-bold">
+            <h2
+              class="font-bold before:mr-2 before:text-blue-500 before:content-['#']"
+            >
               <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
             </h2>
             <span class="text-sm text-neutral-600 dark:text-neutral-400">
@@ -30,12 +32,11 @@
     </div>
     <div>
       <h1 class="mb-2 text-3xl font-bold">{{ i18n "connect" }}</h1>
-      <!-- TODO: Add icons to each item -->
       {{ with .Site.Params.links }}
         <div class="flex flex-wrap gap-4">
           {{ range . }}
             <a
-              class="flex size-36 flex-col border-2 border-neutral-400 bg-neutral-200 p-3 text-black dark:border-neutral-600 dark:bg-neutral-800 dark:text-white"
+              class="group relative flex size-36 flex-col rounded-lg border-2 border-neutral-400 bg-neutral-200 p-3 text-black dark:border-neutral-600 dark:bg-neutral-800 dark:text-white"
               href="{{ .url | safeURL }}"
               target="_blank"
               aria-label="{{ .username | title }}"
@@ -44,8 +45,16 @@
               <div class="font-bold">
                 {{ .name }}
               </div>
-              <div class="w-full text-sm break-words">
+              <div class="w-full text-sm break-words group-hover:underline">
                 {{ .username }}
+              </div>
+              <!--  FIXME: Dark mode support -->
+              <div
+                class="absolute right-2 bottom-2 w-18 opacity-10 drop-shadow-black transition group-hover:opacity-20 group-hover:drop-shadow-2xl/100"
+              >
+                {{ $iconPath := printf "icons/%s" .icon }}
+                {{ $icon := resources.Get $iconPath | resources.Minify }}
+                {{ $icon.Content | safeHTML }}
               </div>
             </a>
           {{ end }}

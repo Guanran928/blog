@@ -8,8 +8,13 @@
     {{ partialCached "css.html" . }}
   </head>
   <body>
-    <header>{{ partial "header.html" . }}</header>
+    <header>
+      <h1 class="text-lg">{{ site.Title }}</h1>
+      {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+    </header>
     <main>{{ block "main" . }}{{ end }}</main>
-    <footer>{{ partial "footer.html" . }}</footer>
+    <footer>
+      {{ .Site.Copyright | markdownify }}
+    </footer>
   </body>
 </html>
