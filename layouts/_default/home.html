@@ -36,7 +36,7 @@
         <div class="flex flex-wrap gap-4">
           {{ range . }}
             <a
-              class="group relative flex size-36 flex-col rounded-lg border-2 border-neutral-400 bg-neutral-200 p-3 text-black dark:border-neutral-600 dark:bg-neutral-800 dark:text-white"
+              class="group relative flex size-36 flex-col rounded-lg bg-neutral-200 p-3 text-black outline outline-neutral-300 dark:bg-neutral-800 dark:text-white dark:outline-neutral-600"
               href="{{ .url | safeURL }}"
               target="_blank"
               aria-label="{{ .username | title }}"
