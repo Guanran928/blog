@@ -11,3 +11,5 @@ links = [
   { name = "Monkeytype", username = "@guanran928", url = "https://monkeytype.com/profile/guanran928", icon = "keyboard-solid.svg" },
   { name = "Steam", username = "d-.-b", url = "https://steamcommunity.com/profiles/76561198855505856", icon = "steam-brands.svg" },
 ]
+
+fediverse_creator = "@nyancat@masodon.ny4.dev"
