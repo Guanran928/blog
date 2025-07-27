@@ -20,3 +20,15 @@ friendImage="https://avatars.githubusercontent.com/u/34574198"
 blogName="李皓奇"
 blogDescription="岂有文章倾社稷，从来佞幸覆乾坤。"
 blogURL="https://liolok.com/zhs/" >}}
+
+{{< friend
+friendImage="https://avatars.githubusercontent.com/u/25235514"
+blogName="prince213"
+blogDescription="sic vita est"
+blogURL="https://prince213.top/" >}}
+
+{{< friend
+friendImage="https://thiscute.world/avatar/myself.jpg"
+blogName="This Cute World"
+blogDescription="忽而盛夏"
+blogURL="https://thiscute.world/" >}}
