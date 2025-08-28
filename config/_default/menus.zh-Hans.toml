@@ -19,6 +19,11 @@ pageRef = '/friends'
 weight = 40
 
 [[main]]
+name = 'DN42'
+pageRef = '/dn42'
+weight = 50
+
+[[main]]
 name = '关于我'
 pageRef = '/about'
-weight = 50
+weight = 60
