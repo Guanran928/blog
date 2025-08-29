@@ -15,7 +15,7 @@ showMetadata = false
 ```markdown
 - 您的 ASN
 - 您想和我的哪台服务器连接
-- 您机器的 DN42 IPv6 与 Link Local 地址
+- 您机器的 DN42 IPv6 地址
 - 您机器的 WireGuard 配置，包括
   - 您机器的公网地址
   - 您机器向我开放的端口号
@@ -27,7 +27,6 @@ showMetadata = false
 位于东京 AWS
 
 - DN42 IPv6: `fd00:5d5b:797c::1`
-- DN42 Link Local: `fe80::3c72`
 - WireGuard Endpoint: `tyo0.ny4.dev:<last 5 digits of your ASN>`
 - WireGuard Pubkey: `KW+H2qK9aDiqoLwvmtLjJ6Sbndbcn4vnJpjT/xz89BE=`
 
