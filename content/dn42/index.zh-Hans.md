@@ -9,6 +9,7 @@ showMetadata = false
 
 - ASN: `4242420021`
 - CIDR: `fd00:5d5b:797c::/48`
+- Looking Glass: https://bird-lg.ny4.dev/
 
 请向我发送：
 
@@ -30,9 +31,10 @@ showMetadata = false
 - WireGuard Endpoint: `tyo0.ny4.dev:<last 5 digits of your ASN>`
 - WireGuard Pubkey: `KW+H2qK9aDiqoLwvmtLjJ6Sbndbcn4vnJpjT/xz89BE=`
 
-<!-- TODO: -->
-<!--
 ### sin0.ny4.dev
 
 位于新加坡 Vultr
--->
+
+- DN42 IPv6: `fd00:5d5b:797c::2`
+- WireGuard Endpoint: `sin0.ny4.dev:<last 5 digits of your ASN>`
+- WireGuard Pubkey: `RnWZblo1ePQoJPAaG/QLFwyaQktNcUmZfikymW9jfHg=`
