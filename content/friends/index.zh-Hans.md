@@ -38,3 +38,9 @@ friendImage="https://assets.2434.me/img/avatar/avatar-256x-256c.png"
 blogName="CronfoxLabs"
 blogDescription="你是靠着什么努力到这里的？"
 blogURL="https://cronfox.2434.me/" >}}
+
+{{< friend
+friendImage="https://www.iyoroy.cn/usr/uploads/2025/07/1725584663.jpg"
+blogName="悠笙の开发日记"
+blogDescription="愿世间万物都能被温柔以待"
+blogURL="https://www.iyoroy.cn/" >}}
