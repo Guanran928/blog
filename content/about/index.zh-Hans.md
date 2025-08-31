@@ -3,7 +3,7 @@ title = '关于我'
 showMetadata = false
 +++
 
-初中生，NixOS 用户，AS4242420021。
+高中生，NixOS 用户，AS4242420021。
 
 ## 关于 ID
 
