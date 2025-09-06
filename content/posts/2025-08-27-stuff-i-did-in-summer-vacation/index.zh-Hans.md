@@ -1,7 +1,7 @@
 +++
 title = '这次暑假我做了什么'
 date = 2025-08-27T16:56:59+08:00
-tags = ['总结']
+tags = ['总结', '学习']
 +++
 
 - **仿照 [ydict](https://github.com/TimothyYe/ydict) 写了 [rdict](https://github.com/Guanran928/rdict)**
@@ -10,7 +10,7 @@ tags = ['总结']
 
   Rust 在我学习后感觉是很精美的一门语言 -- 语法很简练、能用到的库也很多很全。
 
-  项目目前有 CLI, Telegram bot (`teloxide`), GUI (WIP; `iced`) 和 (WIP; `react`) 多个前端。
+  项目目前有 CLI, Telegram bot (`teloxide`), GUI (WIP; `iced`) 和 Web (WIP; `react`) 多个前端。
 
 - **瓦上了铂金**
 
