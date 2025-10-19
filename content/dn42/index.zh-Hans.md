@@ -23,14 +23,6 @@ showMetadata = false
   - 您机器的的公钥
 ```
 
-### tyo0.ny4.dev
-
-位于东京 AWS
-
-- DN42 IPv6: `fd00:5d5b:797c::1`
-- WireGuard Endpoint: `tyo0.ny4.dev:<last 5 digits of your ASN>`
-- WireGuard Pubkey: `KW+H2qK9aDiqoLwvmtLjJ6Sbndbcn4vnJpjT/xz89BE=`
-
 ### sin0.ny4.dev
 
 位于新加坡 Vultr
