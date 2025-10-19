@@ -5,12 +5,12 @@ showMetadata = false
 
 ## 公共服务
 
-| 名称                      | 网址                                               |
-| ------------------------- | -------------------------------------------------- |
-| IP checker                | https://ip.ny4.dev/                                |
-| Prometheus                | https://prom.ny4.dev/                              |
-| Redlib                    | https://reddit.ny4.dev/                            |
-| Wastebin                  | https://pb.ny4.dev/                                |
+| 名称       | 网址                    |
+| ---------- | ----------------------- |
+| IP checker | https://ip.ny4.dev/     |
+| Prometheus | https://prom.ny4.dev/   |
+| Redlib     | https://reddit.ny4.dev/ |
+| Wastebin   | https://pb.ny4.dev/     |
 
 ## 私人服务
 

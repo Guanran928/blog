@@ -39,7 +39,9 @@ Warning level of the battery:
 
 在 GNOME 环境下，UPower 的 `WarningLevel` 会由 [gsd-power](https://gitlab.gnome.org/GNOME/gnome-settings-daemon/-/tree/main/plugins/power?ref_type=heads) 处理，并在需要时向用户发送低电量通知。
 
-![图片来自 [Reddit](https://www.reddit.com/r/gnome/comments/vv7s38/low_battery_notification_cannot_be_dismissed/) u/benjaminnyc](./gsd-power.png)
+<!-- https://www.reddit.com/r/gnome/comments/vv7s38/low_battery_notification_cannot_be_dismissed/ -->
+
+![图片来自 Reddit u/benjaminnyc](./gsd-power.png)
 
 但如果你使用的是一个精简的窗口管理器，桌面环境只提供最基本的功能。许多额外的功能（比如电量通知、自动关机）通常需要用户自行配置或通过其他软件实现。
 
