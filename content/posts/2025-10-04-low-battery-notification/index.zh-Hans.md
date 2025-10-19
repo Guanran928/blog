@@ -1,7 +1,7 @@
 +++
 title = '低电量通知'
 date = 2025-10-14T03:47:08+08:00
-draft = true
+tags = ['Linux']
 +++
 
 ## UPower
