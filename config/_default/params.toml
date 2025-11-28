@@ -1,9 +1,8 @@
 links = [
-  { name = "GPG", username = "91F97D9ED12639CF", url = "https://git.ny4.dev/nyancat.gpg", icon = "key-solid.svg" },
+  { name = "GPG", username = "91F97D9ED12639CF", url = "https://github.com/Guanran928.gpg", icon = "key-solid.svg" },
   { name = "Email", username = "guanran928@outlook.com", url = "mailto:guanran928@outlook.com", icon = "envelope-solid.svg" },
   { name = "Matrix", username = "@nyancat:ny4.dev", url = "https://matrix.to/#/@nyancat:ny4.dev", icon = "message-solid.svg" },
   { name = "Telegram", username = "@guanranwang", url = "https://t.me/guanranwang", icon = "telegram-brands.svg" },
-  { name = "Forgejo", username = "@nyancat", url = "https://git.ny4.dev/nyancat", icon = "git-alt-brands.svg" },
   { name = "GitHub", username = "@guanran928", url = "https://github.com/guanran928", icon = "github-brands.svg" },
   { name = "Mastodon", username = "@nyancat@masodon.ny4.dev", url = "https://mastodon.ny4.dev/@nyancat", icon = "mastodon-brands.svg" },
   { name = "Twitter", username = "@guanran928", url = "https://x.com/guanran928", icon = "twitter-brands.svg" },

@@ -25,10 +25,10 @@ summary = '这是自从我开始写博客后写的第一个年终总结。'
 
 写了一些小项目，~~其实本地还有些没 `git init` 的目录~~：
 
-- https://git.ny4.dev/nyancat/coolbot (python3)
-- https://git.ny4.dev/nyancat/danbooru_img_bot (python3)
-- https://git.ny4.dev/nyancat/chicken-box (vanilla ts)
-- https://git.ny4.dev/nyancat/ip-checker (golang + vanilla ts)
+- ~~https://github.com/Guanran928/coolbot~~ (python3)
+- https://github.com/Guanran928/danbooru_img_bot (python3)
+- https://github.com/Guanran928/chicken-box (vanilla ts)
+- https://github.com/Guanran928/ip-checker (golang + vanilla ts)
 
 ## 其他
 
