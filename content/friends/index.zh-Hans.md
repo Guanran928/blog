@@ -44,3 +44,9 @@ friendImage="https://www.iyoroy.cn/usr/uploads/2025/07/1725584663.jpg"
 blogName="悠笙の开发日记"
 blogDescription="愿世间万物都能被温柔以待"
 blogURL="https://www.iyoroy.cn/" >}}
+
+{{< friend
+friendImage="https://leak.moe/images/avatar.png"
+blogName="静静's Blog"
+blogDescription="偶尔有电波信号出没。"
+blogURL="https://leak.moe/" >}}
