@@ -36,7 +36,6 @@ To actually make Windows 11 usable :-)
   Run `reg add "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation" /v RealTimeIsUniversal /d 1 /t REG_DWORD /f` as admin.
 
 - Privacy stuff
-
   - [privacy.sexy](privacy.sexy) scripts
 
   - [WPD](https://wpd.app/)
@@ -48,7 +47,6 @@ To actually make Windows 11 usable :-)
 - [CompactGUI](https://github.com/IridiumIO/CompactGUI), compresses files transparently.
 
 - Dependencies
-
   - [Visual C++ Redistributable Runtimes](https://learn.microsoft.com/en-US/cpp/windows/latest-supported-vc-redist?view=msvc-170#visual-studio-2015-2017-2019-and-2022)
 
     (`winget install Microsoft.VCRedist.2015+.x64`, 2015+ is enough.)

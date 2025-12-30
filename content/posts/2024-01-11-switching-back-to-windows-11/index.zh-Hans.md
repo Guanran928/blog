@@ -32,7 +32,6 @@ summary = "最近在 NixOS 上遇到点小问题和麻烦，所以想着干脆�
   用管理员权限执行 `reg add "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation" /v RealTimeIsUniversal /d 1 /t REG_DWORD /f`
 
 - 隐私向
-
   - [privacy.sexy](privacy.sexy) 的增强隐私脚本
 
   - [WPD](https://wpd.app/)
@@ -44,7 +43,6 @@ summary = "最近在 NixOS 上遇到点小问题和麻烦，所以想着干脆�
 - [CompactGUI](https://github.com/IridiumIO/CompactGUI)，透明压缩文件
 
 - 依赖文件
-
   - [Visual C++ Redistributable Runtimes](https://learn.microsoft.com/en-US/cpp/windows/latest-supported-vc-redist?view=msvc-170#visual-studio-2015-2017-2019-and-2022)
 
     (`winget install Microsoft.VCRedist.2015+.x64`, 2015+ 足够了)
