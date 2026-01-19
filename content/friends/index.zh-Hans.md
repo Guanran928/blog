@@ -50,3 +50,9 @@ friendImage="https://leak.moe/images/avatar.png"
 blogName="静静's Blog"
 blogDescription="偶尔有电波信号出没。"
 blogURL="https://leak.moe/" >}}
+
+{{< friend
+friendImage="https://avatars.githubusercontent.com/u/54884471"
+blogName="Herbarium.Requiem.Garden"
+blogDescription="子夜钟鸣"
+blogURL="https://herbarium.requiem.garden/friends/" >}}
