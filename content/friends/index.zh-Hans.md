@@ -56,3 +56,9 @@ friendImage="https://avatars.githubusercontent.com/u/54884471"
 blogName="Herbarium.Requiem.Garden"
 blogDescription="子夜钟鸣"
 blogURL="https://herbarium.requiem.garden/friends/" >}}
+
+{{< friend
+friendImage="https://pluie.me/img/avatar.png"
+blogName="pluie.me"
+blogDescription="普鲁伊"
+blogURL="https://pluie.me/" >}}
