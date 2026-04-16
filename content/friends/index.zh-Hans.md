@@ -62,3 +62,9 @@ friendImage="https://pluie.me/img/avatar.png"
 blogName="pluie.me"
 blogDescription="普鲁伊"
 blogURL="https://pluie.me/" >}}
+
+{{< friend
+friendImage="https://avatars.githubusercontent.com/u/146514518"
+blogName="後戸の国"
+blogDescription="边缘之地上的边缘节点"
+blogURL="https://www.dustymind.cc" >}}
