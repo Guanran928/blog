@@ -19,16 +19,18 @@
 <ul class="space-y-3 md:space-y-2">
 	{#each data as { slug, metadata } (slug)}
 		<li class="flex justify-between gap-2">
-			<a
-				href={resolve('/posts/[slug]', { slug })}
-				style:--tag="h-{slug}"
-				class="decoration-underline hover:underline"
-			>
+			<div class="flex items-center gap-1">
 				{#if metadata?.draft}
 					<Badge>草稿</Badge>
 				{/if}
-				{metadata?.title ?? slug}
-			</a>
+				<a
+					href={resolve('/posts/[slug]', { slug })}
+					style:--tag="h-{slug}"
+					class="decoration-underline hover:underline"
+				>
+					{metadata?.title ?? slug}
+				</a>
+			</div>
 			<time datetime={metadata?.date} style:--tag="t-{slug}" class="text-muted-foreground">
 				{metadata?.date ? new Date(metadata?.date).toLocaleDateString() : 'Invalid Date'}
 			</time>
