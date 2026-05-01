@@ -1,11 +1,12 @@
-import { getHeadingsBySlug, getAllPosts } from '$lib/server/posts.js';
+import { headingsBySlug } from '$lib/server/posts.js';
+import { error } from '@sveltejs/kit';
+import type { PageServerLoadEvent } from './$types';
 
 export const prerender = true;
 
-export function entries() {
-	return getAllPosts().map((post) => ({ slug: post.slug }));
-}
+export function load({ params }: PageServerLoadEvent) {
+	const headings = headingsBySlug.get(params.slug);
+	if (!headings) throw error(404, 'Post not found');
 
-export function load({ params }) {
-	return { headings: getHeadingsBySlug(params.slug) };
+	return { headings };
 }

@@ -1,8 +1,8 @@
 <script lang="ts">
 	import 'prism-themes/themes/prism-gruvbox-dark.min.css';
 	import Toc from '$lib/component/Toc.svelte';
-	import TableOfContents from '@lucide/svelte/icons/table-of-contents'
-	import X from '@lucide/svelte/icons/x'
+	import TableOfContents from '@lucide/svelte/icons/table-of-contents';
+	import X from '@lucide/svelte/icons/x';
 	import { cubicOut, cubicIn } from 'svelte/easing';
 
 	let { data } = $props();

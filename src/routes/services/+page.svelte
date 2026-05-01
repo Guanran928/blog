@@ -1,8 +1,8 @@
 <script lang="ts">
 	import Card from '$lib/component/Card.svelte';
-	import Network from '@lucide/svelte/icons/network'
-	import ClipboardList from '@lucide/svelte/icons/clipboard-list'
-	import Egg from '@lucide/svelte/icons/egg'
+	import Network from '@lucide/svelte/icons/network';
+	import ClipboardList from '@lucide/svelte/icons/clipboard-list';
+	import Egg from '@lucide/svelte/icons/egg';
 
 	const links = [
 		{

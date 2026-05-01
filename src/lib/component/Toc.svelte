@@ -19,7 +19,7 @@
 	}: {
 		headings: Heading[];
 		article: HTMLElement | null;
-	} & HTMLAttributes<HTMLElementTagNameMap['aside']> = $props();
+	} & HTMLAttributes<HTMLElement> = $props();
 
 	let activeHeading = $state<string | null>(null);
 	const minLevel = $derived(Math.min(...headings.map((h) => h.level)));
@@ -65,7 +65,7 @@
 
 <aside class={cn('min-w-50 overflow-hidden', className)} {...props}>
 	<nav class="space-y-2">
-		<h2 class="-ml-[0.1em] text-2xl font-bold text-(--text-toc-primary)">目录</h2>
+		<h2 class="ml-[-0.1em] text-2xl font-bold text-(--text-toc-primary)">目录</h2>
 		<ol
 			class="max-h-[50vh] space-y-1.5 overflow-y-auto text-(--text-toc-secondary) md:max-h-[70vh]"
 		>
