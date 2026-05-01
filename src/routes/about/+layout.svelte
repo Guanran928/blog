@@ -43,7 +43,7 @@
 
 			{#snippet failed(cls: string, error: Error)}
 				<Card class="flex {cls} items-center justify-center gap-1 font-sans">
-					<Badge class="border-destructive-border bg-destructive">Error</Badge>
+					<Badge variant="destructive">Error</Badge>
 					{error.message}
 				</Card>
 			{/snippet}

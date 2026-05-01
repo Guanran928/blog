@@ -25,7 +25,7 @@
 				class="decoration-underline hover:underline"
 			>
 				{#if metadata?.draft}
-					<Badge variant="destructive">Draft</Badge>
+					<Badge>Draft</Badge>
 				{/if}
 				{metadata?.title ?? slug}
 			</a>
