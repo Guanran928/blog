@@ -1,0 +1,70 @@
+---
+title: Windows 的字体渲染真的很垃圾吗？
+date: 2026-04-13
+tags: ['typography', 'windows']
+--- 
+
+## 序言
+
+发现很多人对 Windows 有一个误解：认为 Windows 的字体渲染很垃圾，然后疯狂吹 macOS。
+
+但是其实不是字体渲染太烂了，而是微软雅黑太烂了。微软在 Windows 上用的 GDI 和 DirectWrite 字体渲染引擎不比 macOS 的 CoreText 和 \*nix 的 FreeType 差。
+
+那为什么这么多人都觉得 Windows 的字体很丑呢？这其实都是历史遗留原因。
+
+## 微软的做法
+
+### 激进的 hinting
+
+微软和方正在设计 Windows 默认字体 “微软雅黑” 的时候考虑到大多数人用的标准显示器都在 ~100 PPI（Dots Per Inch，每英寸像素的数量）左右，在极低的像素密度下显示结构复杂的中文时为了让字变得更清晰，用了比较激进的 hinting 策略。
+
+> **字体微调**（英语：Font hinting、或 Font instructing）是指使用数学指令来调整轮廓字体的显示，使其与光栅化网格对齐。在低屏幕分辨率下，微调对于生成清晰易读的文本至关重要。
+>
+> -- [字体微调 - 维基百科，自由的百科全书](https://zh.wikipedia.org/zh-cn/%E5%AD%97%E4%BD%93%E5%BE%AE%E8%B0%83)
+
+这就导致字变得更点阵，而且通常中文里横的密度更高，所以经过 hinting 后的微软雅黑的横比较细。
+
+### 大中宫
+
+而且微软为了显示效果更好，把字的中宫设计的非常大，有限的屏幕空间上的字变得更大，更紧凑。
+
+![[2026-04-13-yong.png]]
+
+### 子像素渲染
+
+在 Windows Vista 时代，微软为了字体的显示效果更好，还用上了名为 “ClearType” 的子像素渲染技术。
+
+一个像素由三种颜色组成，红色（R），绿色（G）和蓝色（B）。三个子像素并排排列，然后通过调整亮度来组合成你看到的颜色。
+
+于是一个非常聪明的主意就诞生了，利用更小的子像素来让矢量的斜线变得更丝滑，又名子像素渲染。
+
+![[Pasted image 20260416194906.png]]
+
+> 1 为 ClearType 线，2 是普通的反锯齿线；3 和 4 分别为 1 和 2 的四倍放大图；5 是 1 实际显示在液晶显示器上的放大示意图。如图所示，ClearType 充分利用 LCD 色条排列特性，显示出更为完美的斜线。
+> 
+> -- [ClearType - 维基百科，自由的百科全书](https://zh.wikipedia.org/wiki/ClearType)
+
+但是这项技术也不是没有副作用，相信聪明的你已经想到了。
+
+因为一个子像素只有 RGB 三种颜色内的一种颜色，导致用 ClearType 画出来的字会有微弱的彩边。
+
+## macOS
+
+那反观 macOS 这边呢？
+
+Apple 在 2012 年发布的 MacBook Pro 上就用了像素密度高达 200 的 HiDPI 屏幕，完全不需要任何 hinting 和子像素渲染就能让字显得很清晰和干净。
+
+## 现代 Windows 的补救
+
+现代 Windows 的组件已经关闭了 ClearType，比如 Windows Explorer 的 WinUI 3 的部分都看不到子像素渲染，但是文件列表部分在低分辨率下还是能看到彩色像素。
+
+![[2026-01-15-windows-explorer.png]]
+
+微软的 [be5invis](https://github.com/be5invis) 在 2017 年的 Windows 10 Insider Build 里曾经尝试过改进过微软雅黑，但可惜最后没有被合并到 Windows 正式版本。
+  
+> **Evolving the Microsoft Yahei Font:** As our Insiders from China likely know, Microsoft Yahei is the font we use to display Windows UI text in the Chinese (Simplified) language. We’ve heard your feedback, and with this build we’re updating this font to improve the legibility, symmetry and appearance.
+> 
+> -- [Announcing Windows 10 Insider Preview Build 17025 for PC | Windows Insider Blog](https://blogs.windows.com/windows-insider/2017/10/25/announcing-windows-10-insider-preview-build-17025-pc/)
+
+参考：
+- [微软雅黑：变革、妥协与遗憾 - 《竺院人》杂志工作文档](https://celestialphineas.github.io/ckcers-tutorial/old-articles/microsoft-yahei/)   
