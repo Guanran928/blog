@@ -1,0 +1,137 @@
+---
+title: 用 SvelteKit 重写了博客
+date: 2026-04-14
+---
+
+<script>
+	import IconLink from '$lib/component/IconLink.svelte'
+	import SiNpm from "@icons-pack/svelte-simple-icons/icons/SiNpm";
+	import SiYoutube from "@icons-pack/svelte-simple-icons/icons/SiYoutube";
+	import SiMdnwebdocs from "@icons-pack/svelte-simple-icons/icons/SiMdnwebdocs";
+</script>
+
+
+## Transitional Apps
+
+起因是发现了 <IconLink href="https://www.youtube.com/watch?v=860d8usGC0o" icon={SiYoutube}>Transitional Apps 架构</IconLink>——它的工作方式是页面第一次加载时是服务端发送的渲染好的 HTML，加载完后再通过 Hydrate 变成一个类似 SPA 的网页，页面切换由 JavaScript 完成。
+
+Transitional Apps 把传统 <abbr title="Single Page Application">SPA</abbr> 和 <abbr title="Static Site Generation">SSG</abbr> 的优点结合起来了：
+- 有和 SSG 一样很快的 <abbr title="First Contentful Paint">FCP</abbr> 速度
+- 有和 SPA 一样很快的切换页面速度
+- 禁用 JavaScript 后网站也能正常显示静态内容，非常适合交互性比较低的的网页
+
+Next.js、Nuxt、SvelteKit 和很多框架都支持这种方式渲染网页。 
+
+于是我就瞬间被吸引到了，花了一两天时间用 SvelteKit 重写了一下博客。
+
+## Hugo
+
+之前博客用的是 [Hugo](https://gohugo.io/)，痛点有好几处：
+- 没有后端
+- HTML 里写 Go Template 真的很...
+- 用 npm 的依赖很费劲
+
+换成 SvelteKit 后除了解决了以上问题，还有了：
+- 强大的 Vite & Rolldown
+
+## 败笔
+
+还有一点是用了 MDSveX，类似 MDX，可以在 Markdown 里写 Svelte，但是写的时候发现 MDSveX 的生态实在是太烂了
+- Visual Studio Code 里没有高亮和补全
+- 没有 Prettier 的格式化插件
+- 和 `@sveltejs/enhanced-img` 的兼容性也很糟糕，两个 preprocessor 会打架
+- 想用 footnote 只能[用一个奇怪版本](https://github.com/pngwn/MDsveX/discussions/236)的 `remark-footnotes`
+- 也[没有迁移到 Svelte 5](https://github.com/pngwn/MDsveX/issues/649) 什么的，log 里会有奇怪的 deprecation notice。
+
+## View Transition API 
+
+之前看到 [Naman Goel 的博客](https://nmn.sh/blog)有一个特别帅的动画。点进一篇文章后文章列表的文章标题会有一个动画平移到文章的标题。用到了最近才 [baseline](https://caniuse.com/view-transitions) 的 [View Transition API](https://developer.mozilla.org/en-US/docs/Web/API/View_Transition_API)。
+
+于是我也尝试模仿了一下，效果意外的好，实现起来也非常简单。目前这个特性发现的唯一缺点就是有点掉帧。
+
+### 重影
+
+发现从主页进到文章正文时标题会重影，研究了好久，最后发现是 TailwindCSS 的 `text-4xl` 会设置 `line-height: calc(2.5/2.25)`，然后主页的文章列表用的是默认的 `line-height: 1.5`，正文标题的 line-height 更低一点，导致 bounding box 不太一样。
+
+因为默认动画的 anchor 在元素的左上方，在 bounding box 不一样的情况下会被对齐到左上角。
+
+<div
+	role="img"
+	aria-label="示意图：line-height 不一致时 View Transition 产生跳动的原因"
+	class="space-y-4"
+>
+	<div class="grid grid-cols-2 items-start gap-2">
+		<div class="flex flex-col">
+			<span class="font-mono text-xs">text-4xl</span>
+			<div class="relative border leading-[1.111]">
+				<span class="absolute size-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-500">
+				</span>
+				Lorem ipsum dolor sit amet
+			</div>
+		</div>
+		<div class="flex flex-col">
+			<span class="font-mono text-xs">text-normal</span>
+			<div class="relative border leading-normal">
+				<span class="absolute size-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-500">
+				</span>
+				Lorem ipsum dolor sit amet
+			</div>
+		</div>
+	</div>
+
+	<div class="flex flex-col items-center">
+		<span class="font-mono text-xs">document.startViewTransition()</span>
+		<div class="relative">
+			<span
+				class="absolute top-0 left-0 z-10 size-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-500"
+			></span>
+			<div class="border leading-[1.111]">Lorem ipsum dolor sit amet</div>
+			<div class="absolute top-0 left-0 border leading-normal">Lorem ipsum dolor sit amet</div>
+		</div>
+	</div>
+</div>
+
+## 头像
+
+发现友链页面很多人的头像分辨率都特别大，有的甚至用了 `1024px * 1024px`，于是花了半天时间用 <IconLink href="https://www.npmjs.com/package/sharp" icon={SiNpm}>sharp</IconLink> 代理了一下图片请求。
+
+同时顺便
+- 把头像转换到了 WebP 格式，图片更小，加载速度更快
+- 解決了一些站点 `Cache-Control` 的 `max-age` 太低的问题
+- 解決了 avatars.githubusercontents.com 在国内的访问问题
+
+但是写完了之后才意识到 Cloudflare Workers 压根用不了 `sharp` 依赖的 `libvips` 🤡
+
+## 目录
+
+用了 <IconLink href="https://www.npmjs.com/package/svelte-toc" icon={SiNpm}>svelte-toc</IconLink> 这个 ToC 实现，默认 style 有点丑，但是改了改后还不错。
+
+很可惜不支持 SSR，水合时会闪一下，后面再研究下其他方法。
+
+---
+
+SSR 终于写好了，简单说就是把 .svx 文件用 <IconLink href="https://www.npmjs.com/package/remark" icon={SiNpm}>remark</IconLink> 跑一遍，再把从 mdsvex parse 到的 heading 的信息传给 `<Toc />`。
+
+```typescript
+// src/routes/posts/[slug]/+page.server.ts
+
+function extractHeadings(markdown: string) {
+	// NOTE: we're ignoring svelte syntaxes inside mdsvex
+	const tree = remark().use(remarkFrontmatter).parse(markdown);
+	const slugger = new GithubSlugger();
+	const headings: { level: number; text: string; id: string }[] = [];
+
+	visit(tree, 'heading', (node) => {
+		const text = toString(node);
+		headings.push({ level: node.depth, text, id: slugger.slug(text) });
+	});
+
+	return headings;
+}
+```
+
+## 其他
+
+同时也重新设计了一遍博客的样式，这次很大程度上参考了[朋友的博客](https://ocfox.me/)，用了浅黄色的主题和衬线字体。
+
+干掉了 i18n 和 tags，感觉前者太麻烦了，后者也似乎没有什么实际用处。
