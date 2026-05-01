@@ -4,6 +4,7 @@
 	import TableOfContents from '@lucide/svelte/icons/table-of-contents';
 	import X from '@lucide/svelte/icons/x';
 	import { cubicOut, cubicIn } from 'svelte/easing';
+	import Badge from '$lib/component/Badge.svelte';
 
 	let { data } = $props();
 
@@ -32,20 +33,29 @@
 </svelte:head>
 
 <article>
-	<header class="flex flex-col items-baseline justify-between pt-3 pb-8 sm:flex-row">
-		<!-- leading-normal fixes view transition's ghost image -->
-		<h1 class="text-4xl leading-normal font-semibold text-pretty" style:--tag="h-{data.slug}">
-			{data.content.metadata?.title ?? data.slug}
-		</h1>
-		<time
-			datetime={data.content.metadata?.date ?? undefined}
-			style:--tag="t-{data.slug}"
-			class="text-muted-foreground"
-		>
-			{data.content.metadata?.date
-				? new Date(data.content.metadata?.date).toLocaleDateString()
-				: 'Invalid Date'}
-		</time>
+	<header class="space-y-4 pt-3 pb-8">
+		<div class="flex flex-col items-baseline justify-between sm:flex-row">
+			<!-- leading-normal fixes view transition's ghost image -->
+			<h1 class="text-4xl leading-normal font-semibold text-pretty" style:--tag="h-{data.slug}">
+				{data.content.metadata?.title ?? data.slug}
+			</h1>
+			<time
+				datetime={data.content.metadata?.date ?? undefined}
+				style:--tag="t-{data.slug}"
+				class="text-muted-foreground"
+			>
+				{data.content.metadata?.date
+					? new Date(data.content.metadata?.date).toLocaleDateString()
+					: 'Invalid Date'}
+			</time>
+		</div>
+
+		{#if data.content.metadata?.draft}
+			<div class="flex w-fit items-center gap-1 border border-border bg-surface px-3 py-2">
+				<Badge>警告</Badge>
+				<span class="text-sm">本文为草稿，内容可能不完整或有所变动。</span>
+			</div>
+		{/if}
 	</header>
 
 	{#if data.headings.length > 0}

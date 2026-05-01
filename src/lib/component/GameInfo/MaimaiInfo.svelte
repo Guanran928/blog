@@ -12,7 +12,7 @@
 		<Card class="flex h-[48px] w-[240px] items-center justify-center font-sans"><Skeleton /></Card>
 	{:else}
 		<Card class="flex h-[48px] w-[240px] items-center justify-center gap-1 font-sans">
-			<Badge class="border-destructive-border bg-destructive">Error</Badge>
+			<Badge variant="destructive">Error</Badge>
 			Image loading failed
 		</Card>
 	{/if}

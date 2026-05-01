@@ -7,7 +7,7 @@ import type { PostMetadata, PostModule, Heading } from '$lib/posts.js';
 
 export type { PostMetadata, PostModule, Heading };
 
-const metaGlob = import.meta.glob<{ metadata?: PostMetadata }>('/src/posts/**/+page.svx', {
+const metaGlob = import.meta.glob<PostModule>('/src/posts/**/+page.svx', {
 	eager: true
 });
 

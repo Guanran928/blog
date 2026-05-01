@@ -5,6 +5,7 @@ export interface PostMetadata {
 	title?: string;
 	date?: string;
 	tags?: string[];
+	draft?: boolean;
 }
 
 export interface PostModule {

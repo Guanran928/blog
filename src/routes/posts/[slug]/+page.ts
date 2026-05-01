@@ -1,6 +1,7 @@
 import { getPostBySlug } from '$lib/posts';
+import type { PageLoadEvent } from './$types';
 
-export async function load({ parent, params, data }) {
+export async function load({ parent, params, data }: PageLoadEvent) {
 	const parentData = await parent();
 	const post = await getPostBySlug(params.slug);
 
