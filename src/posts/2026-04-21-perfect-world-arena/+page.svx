@@ -1,0 +1,133 @@
+---
+title: 完美世界竞技平台
+date: 2026-04-21
+---
+
+<script>
+    import pwaI18nTypos from "./pwa-i18n-typos.png?enhanced"
+    import pwaI18nUntranslatedStrings from "./pwa-i18n-untranslated-strings.png?enhanced"
+    import pwaUiBorder from "./pwa-ui-border.png?enhanced"
+    import pwaUiCentering from "./pwa-ui-centering.png?enhanced"
+    import pwaUiContrast from "./pwa-ui-contrast.png?enhanced"
+    import pwaHomepage from "./pwa-homepage.png?enhanced"
+    import pwaHomepageBitmapImages from "./pwa-homepage-bitmap-images.png?enhanced"
+    import pwaHomepageElementOverflow from "./pwa-homepage-element-overflow.png?enhanced"
+    import pwaHomepageExtraHighlights from "./pwa-homepage-extra-highlights.png?enhanced"
+    import pwaHomepageNoTooltip from "./pwa-homepage-no-tooltip.png?enhanced"
+    import pwaI18nBadUx from "./pwa-i18n-bad-ux.png?enhanced"
+    import pwaI18nCjkSpacing from "./pwa-i18n-cjk-spacing.png?enhanced"
+    import pwaI18nOverflow from "./pwa-i18n-overflow.png?enhanced"
+    import Picture from '$lib/component/Picture.svelte'
+</script>
+
+## 序言
+
+作为一个非常喜欢玩 FPS 的玩家，我有时会在完美平台上玩 CS。但这个界面实在是太狗屎了，写一篇文章批评一下它。
+
+## 主页
+
+首先就是这个土味十足的主页。
+
+暂时先不评价这些组件本身好不好看，让我们来看看它页面的总体布局：
+
+<Picture src={pwaHomepage} alt="完美世界竞技平台的主页" />
+
+### 视觉层级
+
+信息密度真的是太大了，界面完全没有任何[视觉层级](https://medium.com/uxeastmeetswest/%E6%8F%90%E5%8D%87%E6%98%93%E8%AE%80%E6%80%A7-%E4%BA%8C-%E8%A6%96%E8%A6%BA%E5%B1%A4%E7%B4%9A%E4%BB%8B%E7%B4%B9%E8%88%87%E5%AF%A6%E4%BE%8Bvisual-hierarchy-cf451622b48a)和强弱关系，背景图片非常亮，还把很多无意义的组件都加上了鲜艳的背景颜色。
+
+> If you make everything bold, nothing is bold.
+
+<Picture src={pwaHomepageExtraHighlights} alt="平台主页。页面的很多元素都用了很鲜艳的背景颜色" />
+
+### 位图
+
+页面上很多地方还用了位图资源，现在是 2004 年吗？就算不用 SVG 和矢量字体，高分辨率的图片难道都不会用吗？
+
+<Picture src={pwaHomepageBitmapImages} alt="平台主页。页面的很多元素都了位图资源，显示非常模糊" />
+
+### 响应式
+
+尽管完美的前端开发为了不写响应式，直接禁止了窗口的 resize，大小是固定的 1280px * 800px。
+
+但是非常搞笑的是还是会出现 overflow。
+
+<Picture src={pwaHomepageElementOverflow} alt="平台主页的溢出" />
+
+### 奇怪的按钮
+
+标题栏右侧的四个按钮完全没有任何 tooltip 或其他方式告诉用户按钮的作用，想要知道是什么按钮只能点开。
+
+<Picture src={pwaHomepageNoTooltip} alt="平台的标题栏按钮" />
+
+---
+## 组件
+
+不知道完美是不是请不起设计师，页面元素真的设计的特别丑。
+
+### 边框
+
+亏你们能想得出来这个蓝紫色的边框。
+
+<Picture src={pwaUiBorder} alt="组件库的按钮——顶部、右侧为紫色，底部、左侧为蓝色" />
+
+### 对比度
+
+这个 checkmark 用了浅蓝+白色，真的是非常糟糕的对比度。
+
+<Picture src={pwaUiContrast} alt="组件库的复选框——背景为浅蓝色，前景为白色" />
+
+### 居中
+
+元素居中都不会了？学 CSS 时入门第一章就教你怎么居中 div 了吧。
+
+<Picture src={pwaUiCentering} alt="设置页面的“游戏兼容模式”选项，卡片内部的文字不垂直居中" />
+
+---
+
+## 奇怪的 i18n
+
+主页上非常明显的“设置”页面里完全找不到语言选项。外国玩家想要用英语的话怎么办呢？
+
+### UX
+
+哈哈！这个设置选项在“账户信息”里，而且按钮叫做 "I'm EN player"，非常不专业。
+
+<Picture src={pwaI18nBadUx} alt="账户信息页面" />
+
+### 翻译
+
+但是为什么设置了英语还是能出现汉字呢？
+
+很明显完美在开发的时候就没有设计 i18n，后面也只是为了上海 Major 才赶工出来了一个英文选项。
+
+<Picture src={pwaI18nUntranslatedStrings} alt="英语环境下，平台的游玩模式选择页面。页面上大部分文字为中文" />
+
+### 空白
+
+根据 [CLReq](https://www.w3.org/TR/clreq/#mixed_text_composition_in_horizontal_writing_mode)，混排时中文与西文之间应插入空白。
+
+> 原则上，汉字与西文字母、数字间使用不多于四分之一个汉字宽的字距或空白，或可使用西文词间空格。
+
+完美的平台基于 Electron（简单说就是浏览器套壳），只用一行代码设置一下 `text-autospace: normal` 就能解决这个问题了，但是他们好像不太在意 UI 上的细节。
+
+<Picture src={pwaI18nCjkSpacing} alt="平台的游玩模式选择时的页面。一段文字混排时中文与西文间没有添加任何空白" />
+
+### 溢出
+
+没有考虑西文的文字长度，又是 overflow。
+
+<Picture src={pwaI18nOverflow} alt="英语环境下设置页面。页面上西文溢出了网格" />
+
+### 拼写
+
+拼写问题：
+
+| 平台的拼写       | 正确拼写                   |
+|------------------|----------------------------|
+| AK47n up blood a | 我真的想不出来它想表达什么 |
+| Hegrenade        | HE Grenade                 | 
+| Incgrenade       | Incendiary Grenade         |
+| Vesthelm         | Vest + Helmet              |
+
+<Picture src={pwaI18nTypos} alt="英语环境下设置页面的错字" />
