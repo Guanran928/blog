@@ -1,21 +1,31 @@
-# https://github.com/github/gitignore/blob/main/community/Golang/Hugo.gitignore
+node_modules
 
-# Generated files by hugo
-/public/
-/resources/_gen/
-/assets/jsconfig.json
-hugo_stats.json
+# Output
+.output
+.vercel
+.netlify
+.wrangler
+/.svelte-kit
+/build
 
-# Executable may be added to repository
-hugo.exe
-hugo.darwin
-hugo.linux
+# OS
+.DS_Store
+Thumbs.db
 
-# Temporary lock file while building
-/.hugo_build.lock
+# Env
+.env
+.env.*
+!.env.example
+!.env.test
 
-# Direnv
+# Vite
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
+# Nix
 /.direnv
 
-# JS
-/node_modules
+# Wrangler
+/worker-configuration.d.ts
+.dev.vars*
+!.dev.vars.example

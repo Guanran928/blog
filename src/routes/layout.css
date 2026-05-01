@@ -1,0 +1,63 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+body {
+	@apply mx-auto flex min-h-screen max-w-3xl flex-col p-4 font-serif underline-offset-4;
+
+	@apply bg-background text-foreground;
+
+	@apply selection:bg-neutral-800 selection:text-neutral-300 dark:selection:bg-neutral-300 dark:selection:text-neutral-800;
+}
+
+@theme inline {
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+
+	--color-muted-foreground: var(--muted-foreground);
+	--color-accent-foreground: var(--accent-foreground);
+	--color-border: var(--border);
+	--color-surface: var(--surface);
+	--color-destructive: var(--destructive);
+	--color-destructive-border: var(--destructive-border);
+	--color-underline: var(--underline);
+}
+
+:root {
+	--background: var(--color-stone-50);
+	--foreground: var(--color-neutral-950);
+	--accent-foreground: var(--color-amber-500);
+	--muted-foreground: var(--color-neutral-500);
+	--border: var(--color-stone-300);
+	--surface: var(--color-stone-100);
+	--destructive: var(--color-red-200);
+	--destructive-border: var(--color-red-400);
+	--underline: var(--color-neutral-300);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--background: var(--color-stone-900);
+		--foreground: var(--color-neutral-50);
+		--muted-foreground: var(--color-neutral-400);
+		--accent-foreground: var(--color-amber-400);
+		--border: var(--color-stone-700);
+		--surface: var(--color-stone-800);
+		--destructive: var(--color-red-800);
+		--destructive-border: var(--color-red-700);
+		--underline: var(--color-neutral-700);
+	}
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	[style*='--tag'] {
+		view-transition-name: var(--tag);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	::view-transition-group(*),
+	::view-transition-old(*),
+	::view-transition-new(*) {
+		animation: none !important;
+	}
+}
