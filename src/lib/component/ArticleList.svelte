@@ -25,7 +25,7 @@
 				class="decoration-underline hover:underline"
 			>
 				{#if metadata?.draft}
-					<Badge>Draft</Badge>
+					<Badge>草稿</Badge>
 				{/if}
 				{metadata?.title ?? slug}
 			</a>
