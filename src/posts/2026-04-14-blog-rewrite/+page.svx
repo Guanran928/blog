@@ -1,6 +1,7 @@
 ---
 title: 用 SvelteKit 重写了博客
 date: 2026-04-14
+draft: true
 ---
 
 <script>
