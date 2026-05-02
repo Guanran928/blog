@@ -52,7 +52,7 @@
 
 		{#if data.content.metadata?.draft}
 			<div class="flex w-fit items-center gap-1 border border-border bg-surface px-3 py-2">
-				<Badge>警告</Badge>
+				<Badge style="--tag: d-{data.slug}">警告</Badge>
 				<span class="text-sm">本文为草稿，内容可能不完整或有所变动。</span>
 			</div>
 		{/if}

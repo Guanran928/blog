@@ -21,7 +21,7 @@
 		<li class="flex justify-between gap-2">
 			<div class="flex items-center gap-1">
 				{#if metadata?.draft}
-					<Badge>草稿</Badge>
+					<Badge style="--tag: d-{slug}">草稿</Badge>
 				{/if}
 				<a
 					href={resolve('/posts/[slug]', { slug })}

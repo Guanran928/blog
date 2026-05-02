@@ -103,7 +103,7 @@
 				{@const Icon = link.icon}
 
 				<a
-					class="group relative flex items-center justify-between gap-2 border border-border bg-surface px-3 py-2 shadow-xs text-shadow-md text-shadow-stone-200 dark:text-shadow-stone-900"
+					class="group relative flex items-center justify-between gap-2 border border-border bg-surface px-3 py-2 shadow-xs"
 					href={link.url}
 					target="_blank"
 					rel="me external"

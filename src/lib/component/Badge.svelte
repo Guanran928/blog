@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { cn } from '$lib/cn';
 	import type { Snippet } from 'svelte';
+	import type { HTMLAttributes } from 'svelte/elements';
 
 	let {
 		children,
@@ -11,7 +12,7 @@
 		children?: Snippet;
 		class?: string;
 		variant?: 'normal' | 'destructive';
-	} = $props();
+	} & HTMLAttributes<HTMLSpanElement> = $props();
 
 	const variantCSS = {
 		normal: '',
