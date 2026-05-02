@@ -67,6 +67,12 @@
 			name: '後戸の国',
 			url: 'https://www.dustymind.cc',
 			description: '边缘之地上的边缘节点'
+		},
+		{
+			image: 'https://avatars.githubusercontent.com/u/68736947?s=144',
+			name: 'lonerOrz',
+			url: 'https://astro-blog-rosy.vercel.app/',
+			description: "lonerOrz's website"
 		}
 	];
 </script>
