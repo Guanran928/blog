@@ -23,7 +23,7 @@
 <span
 	{...props}
 	class={cn(
-		'rounded-full border border-border bg-surface px-2 py-0.5 font-sans text-xs font-medium',
+		'rounded-full border border-border bg-surface px-2 py-0.5 font-sans text-xs font-medium text-nowrap',
 		variantCSS[variant],
 		className
 	)}

@@ -1,15 +1,12 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
 	import type { PostMetadata } from '$lib/posts';
-	import type { Component } from 'svelte';
 
 	let {
 		data
 	}: {
 		data: {
 			metadata?: PostMetadata;
-			default: Component;
-			path: string;
 			slug: string;
 		}[];
 	} = $props();

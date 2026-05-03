@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
 	import type { PostMetadata } from '$lib/posts';
-	import type { Component } from 'svelte';
 	import Badge from './Badge.svelte';
 
 	let {
@@ -9,8 +8,6 @@
 	}: {
 		data: {
 			metadata?: PostMetadata;
-			default: Component;
-			path: string;
 			slug: string;
 		}[];
 	} = $props();
