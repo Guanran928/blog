@@ -5,6 +5,9 @@ import type { mmr } from '$lib/types/valorant';
 import type { OsuUser } from '$lib/types/osu';
 import type { SteamGame, SteamOwnedGames } from '$lib/types/steam';
 import type { ProfileResponse } from '$lib/types/monkeytype';
+import type { LayoutServerLoadEvent } from './$types';
+
+export const prerender = false;
 
 let ValCache: CacheEntry<mmr> | null = null;
 let OsuCache: CacheEntry<OsuUser> | null = null;
@@ -62,7 +65,7 @@ function fetchMonkeyType(_fetch: typeof fetch) {
 	);
 }
 
-export async function load({ fetch }) {
+export async function load({ fetch }: LayoutServerLoadEvent) {
 	const valPromise = fetchVal(fetch);
 	const osuPromise = fetchOsu(fetch);
 	const csPromise = fetchSteam(fetch);

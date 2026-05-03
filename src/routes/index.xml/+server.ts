@@ -2,8 +2,6 @@ import { DOMAIN, SITE_NAME } from '$lib/const';
 import { posts } from '$lib/server/posts.js';
 import { Feed } from 'feed';
 
-export const prerender = true;
-
 export async function GET() {
 	if (posts.length === 0) {
 		return new Response(null, { status: 204 });

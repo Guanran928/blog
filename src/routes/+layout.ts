@@ -1,5 +1,7 @@
 import { SITE_DESCRIPTION, SITE_NAME } from '$lib/const';
 
+export const prerender = true;
+
 export function load() {
 	return {
 		og: {
