@@ -40,13 +40,17 @@
 			if (pre.querySelector('[data-copy-code]')) continue;
 
 			pre.classList.add('group', 'relative');
+			pre.dataset.language =
+				[...pre.classList, ...pre.querySelector('code')!.classList]
+					.find((className) => className.startsWith('language-'))
+					?.replace('language-', '') ?? 'text';
 
 			const button = document.createElement('button');
 			button.type = 'button';
 			button.ariaLabel = 'Copy code';
 			button.dataset.copyCode = 'true';
 			button.className =
-				'copy-code-button absolute top-2 right-2 z-10 border border-border bg-surface px-2 py-1 font-sans text-xs opacity-0 shadow-xs transition-opacity group-hover:opacity-100 focus-visible:opacity-100';
+				'copy-code-button absolute top-11 right-2 z-10 border border-border bg-surface px-2 py-1 font-sans text-xs opacity-0 shadow-xs transition-opacity group-hover:opacity-100 focus-visible:opacity-100';
 
 			pre.insertBefore(button, pre.firstChild);
 		}
@@ -152,6 +156,15 @@
 
 	:global(.footnote-backref) {
 		@apply pl-2;
+	}
+
+	:global(pre[data-language]) {
+		@apply pt-10;
+	}
+
+	:global(pre[data-language]::before) {
+		content: attr(data-language);
+		@apply absolute top-0 right-0 left-0 border-b border-white/10 px-4 py-2 font-sans text-xs text-white/60 uppercase;
 	}
 
 	:global(.copy-code-button) {
