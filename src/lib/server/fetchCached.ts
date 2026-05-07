@@ -6,7 +6,7 @@ export type CacheEntry<T> = { data: T; ts: number };
 export async function fetchCached<TRaw, T>(
 	cache: CacheEntry<T> | null,
 	setCache: (entry: CacheEntry<T>) => void,
-	url: URL,
+	input: URL | Request,
 	transform: (raw: TRaw) => T | null,
 	parse: (res: Response) => Promise<TRaw> = (res) => res.json(),
 	fetchFn: typeof fetch = globalThis.fetch,
@@ -18,7 +18,7 @@ export async function fetchCached<TRaw, T>(
 
 	let res: Response;
 	try {
-		res = await fetchFn(url);
+		res = await fetchFn(input);
 	} catch (e) {
 		error(500, `Network error: ${e instanceof Error ? e.message : String(e)}`);
 	}

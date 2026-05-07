@@ -12,12 +12,16 @@
 		MaimaiInfo
 	} from '$lib/component/GameInfo';
 	import Skeleton from '$lib/component/Skeleton.svelte';
+
+	import Heatmap from '$lib/component/Heatmap.svelte';
+	import { GITHUB_PROFILE } from '$lib/const';
+	import SiGithub from '@icons-pack/svelte-simple-icons/icons/SiGithub';
 </script>
 
 <article
 	class="prose max-w-none pt-3 wrap-break-word prose-neutral dark:prose-invert prose-headings:scroll-mt-8 prose-headings:decoration-underline prose-a:decoration-underline prose-a:transition-[text-decoration-color] prose-a:hover:decoration-accent-foreground"
 >
-	<div class="not-prose flex flex-row items-center gap-4">
+	<div class="not-prose flex flex-row items-center gap-4 pb-8">
 		<img
 			src="https://avatars.githubusercontent.com/u/68757440?s=192"
 			alt="Guanran928"
@@ -31,6 +35,33 @@
 		</div>
 	</div>
 
+	<Card class="not-prose">
+		<div class="flex items-center justify-between gap-4 pb-3 font-sans text-sm">
+			<a href={GITHUB_PROFILE.url} class="flex shrink-0 items-center gap-2 no-underline">
+				<SiGithub class="size-4" />
+				{GITHUB_PROFILE.username}
+			</a>
+			{#await data.github}
+				<Skeleton class="h-5 w-44" />
+			{:then github}
+				<span class="w-44 text-right text-muted-foreground">
+					{github.total} contributions in {github.year}
+				</span>
+			{/await}
+		</div>
+
+		{#await data.github}
+			<Heatmap data={{}} loading />
+		{:then github}
+			<Heatmap data={github.data} year={github.year} />
+		{:catch error}
+			<div class="flex min-h-30 items-center justify-center gap-1 font-sans">
+				<Badge variant="destructive">GitHub Error</Badge>
+				{error.message}
+			</div>
+		{/await}
+	</Card>
+
 	{@render children()}
 
 	<div class="not-prose space-y-1">
@@ -38,7 +69,9 @@
 			<MaimaiInfo />
 
 			{#snippet loading(cls: string)}
-				<Card class="flex {cls} items-center justify-center font-sans"><Skeleton /></Card>
+				<Card class="flex {cls} items-center justify-center p-1 font-sans"
+					><Skeleton class="size-full" /></Card
+				>
 			{/snippet}
 
 			{#snippet failed(cls: string, error: Error)}
@@ -49,35 +82,35 @@
 			{/snippet}
 
 			{#await data.val}
-				{@render loading('h-16.5 w-48')}
+				{@render loading('h-[65px] w-[185px]')}
 			{:then data}
 				<ValorantInfo {data} />
 			{:catch error}
-				{@render failed('h-16.5 w-48', error)}
+				{@render failed('h-[65px] w-[185px]', error)}
 			{/await}
 
 			{#await data.cs}
-				{@render loading('h-22.5 w-64')}
+				{@render loading('h-[100px] w-[255px]')}
 			{:then data}
 				<CounterStrikeInfo {data} />
 			{:catch error}
-				{@render failed('h-22.5 w-64', error)}
+				{@render failed('h-[100px] w-[255px]', error)}
 			{/await}
 
 			{#await data.osu}
-				{@render loading('h-23.5 w-96')}
+				{@render loading('h-[95px] w-[495px]')}
 			{:then data}
 				<OsuInfo {data} />
 			{:catch error}
-				{@render failed('h-23.5 w-96', error)}
+				{@render failed('h-[95px] w-[495px]', error)}
 			{/await}
 
 			{#await data.monkeytype}
-				{@render loading('h-[170px] w-[200px]')}
+				{@render loading('h-[170px] w-[210px]')}
 			{:then data}
 				<MonkeyTypeInfo {data} />
 			{:catch error}
-				{@render failed('h-[170px] w-[200px]', error)}
+				{@render failed('h-[170px] w-[210px]', error)}
 			{/await}
 		</div>
 	</div>
