@@ -29,10 +29,13 @@
 		if (resetTimer) clearTimeout(resetTimer);
 
 		button.dataset.copied = 'true';
-		copyResetTimers.set(button, setTimeout(() => {
-			delete button.dataset.copied;
-			copyResetTimers.delete(button);
-		}, 1200));
+		copyResetTimers.set(
+			button,
+			setTimeout(() => {
+				delete button.dataset.copied;
+				copyResetTimers.delete(button);
+			}, 1200)
+		);
 	}
 
 	function addCopyButtons() {
@@ -102,7 +105,8 @@
 
 		{#if data.content.metadata?.draft}
 			<div class="flex w-fit items-center gap-1 border border-border bg-surface px-3 py-2">
-				<Badge style="--tag: d-{data.slug}">警告</Badge>
+				<!-- eslint-disable-next-line svelte/no-useless-mustaches -->
+				<Badge style="--tag: d-{data.slug}">警告</Badge>{' '}
 				<span class="text-sm">本文为草稿，内容可能不完整或有所变动。</span>
 			</div>
 		{/if}
