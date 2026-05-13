@@ -1,6 +1,10 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
 
+html {
+	@apply scroll-smooth;
+}
+
 body {
 	@apply mx-auto flex min-h-screen max-w-3xl flex-col p-4 font-serif underline-offset-4;
 

@@ -81,16 +81,7 @@
 							: 'decoration-background transition-[text-decoration] hover:decoration-underline'
 					)}
 				>
-					<a
-						href={`#${heading.id}`}
-						onclick={(e) => {
-							e.preventDefault();
-							document.getElementById(heading.id)?.scrollIntoView({ behavior: 'smooth' });
-							// FIXME: https://github.com/sveltejs/kit/issues/14750
-							// eslint-disable-next-line svelte/no-navigation-without-resolve
-							pushState(`${page.url.pathname}#${heading.id}`, {});
-						}}
-					>
+					<a href={`#${heading.id}`}>
 						{heading.text}
 					</a>
 				</li>
