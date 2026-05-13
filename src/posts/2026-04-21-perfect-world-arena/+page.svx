@@ -2,6 +2,7 @@
 title: 完美世界竞技平台
 date: 2026-04-21
 draft: true
+tags: ['设计', 'CS']
 ---
 
 <script>
