@@ -1,8 +1,11 @@
 <script lang="ts">
+	// TODO: Serve this as a 'Projects' page or 'Services' page? Or both?
+
 	import Card from '$lib/component/Card.svelte';
-	import Network from '@lucide/svelte/icons/network';
 	import ClipboardList from '@lucide/svelte/icons/clipboard-list';
 	import Egg from '@lucide/svelte/icons/egg';
+	import Network from '@lucide/svelte/icons/network';
+	import Snowflake from '@lucide/svelte/icons/snowflake';
 
 	const links = [
 		{
@@ -19,6 +22,11 @@
 			name: 'Chicken Box',
 			url: 'https://cxk.ny4.dev',
 			icon: Egg
+		},
+		{
+			name: 'Nixpkgs Tracker',
+			url: 'https://nix.ny4.dev',
+			icon: Snowflake
 		}
 	];
 </script>
@@ -28,16 +36,16 @@
 	{#each links as link, index (link.name)}
 		{@const Icon = link.icon}
 		<a href={link.url} target="_blank" rel="external" style:--tag="c-{index}">
-			<Card class="group relative flex items-center justify-between gap-2">
+			<Card class="group relative flex items-center justify-between gap-2 text-sm">
 				<div class="flex flex-col truncate">
 					<span class="font-semibold">
 						{link.name}
 					</span>
-					<span class="text-sm text-muted-foreground group-hover:underline">
+					<span class="text-muted-foreground group-hover:underline">
 						{link.url.replace('https://', '')}
 					</span>
 				</div>
-				<Icon class="size-6 shrink-0" />
+				<Icon class="size-6 shrink-0 text-neutral-700 dark:text-neutral-300" />
 			</Card>
 		</a>
 	{/each}

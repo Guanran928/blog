@@ -15,6 +15,7 @@
 
 	import Rss from '@lucide/svelte/icons/rss';
 	import Mail from '@lucide/svelte/icons/mail';
+	import Card from '$lib/component/Card.svelte';
 
 	const links = [
 		{
@@ -102,28 +103,24 @@
 			{#each links as link, index (link.name)}
 				{@const Icon = link.icon}
 
-				<a
-					class="group relative flex items-center justify-between gap-2 border border-border bg-surface px-3 py-2 shadow-xs"
-					href={link.url}
-					target="_blank"
-					rel="me external"
-					style:--tag="c-{index}"
-				>
-					<div class="flex flex-col truncate">
-						<span class="font-semibold">
-							{link.name}
-						</span>
-						<span
-							class={cn(
-								'text-sm text-muted-foreground decoration-underline group-hover:underline',
-								link.name === 'GPG' && 'font-mono'
-							)}
-						>
-							{link.username}
-						</span>
-					</div>
+				<a href={link.url} target="_blank" rel="me external" style:--tag="c-{index}">
+					<Card class="group relative flex items-center justify-between text-sm gap-2">
+						<div class="flex flex-col truncate">
+							<span class="font-semibold">
+								{link.name}
+							</span>
+							<span
+								class={cn(
+									'text-muted-foreground decoration-underline group-hover:underline',
+									link.name === 'GPG' && 'font-mono'
+								)}
+							>
+								{link.username}
+							</span>
+						</div>
 
-					<Icon class="size-6 shrink-0" />
+						<Icon class="size-6 shrink-0 text-neutral-700 dark:text-neutral-300" />
+					</Card>
 				</a>
 			{/each}
 		</div>
