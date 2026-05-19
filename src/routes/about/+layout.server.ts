@@ -72,6 +72,7 @@ const githubHeaders = () =>
 		Accept: 'application/vnd.github+json',
 		Authorization: `Bearer ${GITHUB_TOKEN}`,
 		'Content-Type': 'application/json',
+		'User-Agent': 'blog.ny4.dev',
 		'X-GitHub-Api-Version': '2022-11-28'
 	});
 
