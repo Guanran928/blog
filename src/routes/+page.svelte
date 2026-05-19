@@ -90,7 +90,7 @@
 			<a
 				href={resolve('/index.xml')}
 				aria-label="RSS feed"
-				class="border border-border bg-surface p-1"><Rss size="20" /></a
+				class="rounded-lg border border-border bg-surface p-1.5"><Rss size="20" /></a
 			>
 		</div>
 
@@ -104,9 +104,9 @@
 				{@const Icon = link.icon}
 
 				<a href={link.url} target="_blank" rel="me external" style:--tag="c-{index}">
-					<Card class="group relative flex items-center justify-between text-sm gap-2">
+					<Card class="group relative flex items-center justify-between gap-2 text-sm">
 						<div class="flex flex-col truncate">
-							<span class="font-semibold">
+							<span class="font-medium">
 								{link.name}
 							</span>
 							<span

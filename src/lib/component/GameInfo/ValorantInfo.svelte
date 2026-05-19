@@ -80,7 +80,7 @@
 >
 	<img src={rankMap[data.rank]} alt="" class="size-12" />
 	<div class="flex flex-col">
-		<span class="font-semibold">
+		<span class="font-medium">
 			{data.name}<span class="text-muted-foreground">#{data.tag}</span>
 		</span>
 		<span class="text-sm text-muted-foreground">

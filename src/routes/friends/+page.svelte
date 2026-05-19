@@ -83,7 +83,7 @@
 		<a href={link.url} target="_blank" rel="external" style:--tag="c-{index}">
 			<Card class="group relative flex items-center justify-between gap-2 pr-2 text-sm">
 				<div class="flex flex-col truncate">
-					<span class="font-semibold">
+					<span class="font-medium">
 						{link.name}
 					</span>
 					<span class="text-muted-foreground decoration-underline group-hover:underline">

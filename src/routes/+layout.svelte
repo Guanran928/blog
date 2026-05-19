@@ -53,7 +53,7 @@
 <nav class="flex flex-col items-center justify-between gap-1 pb-5 sm:flex-row" style:--tag="nav">
 	<a
 		href={resolve('/')}
-		class={cn('text-xl font-medium', page.url.pathname === '/' && 'font-semibold')}>{SITE_NAME}</a
+		class={cn('text-xl font-medium', page.url.pathname === '/' && 'font-medium')}>{SITE_NAME}</a
 	>
 	<div class="flex items-center gap-3">
 		{#each navLinks as link, i (link.href)}
