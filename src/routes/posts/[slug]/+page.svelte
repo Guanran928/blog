@@ -86,12 +86,14 @@
 </svelte:head>
 
 <article>
-	<header class="space-y-4 pt-3 pb-8">
+	<header class="flex flex-col gap-2 pt-3 pb-8">
 		<div class="flex flex-col items-baseline justify-between sm:flex-row">
 			<!-- leading-normal fixes view transition's ghost image -->
 			<h1 class="text-4xl leading-normal font-semibold text-pretty" style:--tag="h-{data.slug}">
 				{data.content.metadata?.title ?? data.slug}
 			</h1>
+
+			<!-- the position of this looks imbalanced with the <Toc>... -->
 			<time
 				datetime={data.content.metadata?.date ?? undefined}
 				style:--tag="t-{data.slug}"
@@ -103,11 +105,11 @@
 			</time>
 		</div>
 
-		{#if data.content.metadata?.draft}
-			<div class="flex w-fit items-center gap-1 border border-border bg-surface px-3 py-2">
-				<!-- eslint-disable-next-line svelte/no-useless-mustaches -->
-				<Badge style="--tag: d-{data.slug}">警告</Badge>{' '}
-				<span class="text-sm">本文为草稿，内容可能不完整或有所变动。</span>
+		{#if data.content.metadata?.tags}
+			<div class="flex gap-1.5">
+				{#each data.content.metadata.tags as tag (tag)}
+					<Badge>#{tag}</Badge>
+				{/each}
 			</div>
 		{/if}
 	</header>
@@ -123,7 +125,7 @@
 					<Toc
 						headings={data.headings}
 						{article}
-						class="self-end  border border-border bg-surface p-4 shadow-sm sm:order-last"
+						class="self-end rounded-lg border border-border bg-surface p-4 shadow-sm sm:order-last"
 					/>
 					<button
 						aria-label="目录"
@@ -134,7 +136,7 @@
 			{/if}
 
 			<button
-				class="fixed right-4 bottom-4 z-40 border border-border bg-surface p-2 shadow-sm"
+				class="fixed right-4 bottom-4 z-40 rounded-lg border border-border bg-surface p-2 shadow-sm"
 				onclick={() => (open = true)}
 			>
 				<TableOfContents />
@@ -146,11 +148,22 @@
 		{#if data.headings.length > 0}
 			<Toc headings={data.headings} {article} class="sticky top-8 hidden sm:order-last sm:block" />
 		{/if}
-		<div
-			class="prose w-full max-w-none min-w-0 wrap-break-word prose-neutral dark:prose-invert prose-headings:scroll-mt-8 prose-headings:decoration-underline prose-a:decoration-underline prose-a:transition-[text-decoration-color] prose-a:hover:decoration-accent-foreground"
-			bind:this={article}
-		>
-			<Content />
+
+		<div class="flex min-w-0 flex-col gap-8">
+			{#if data.content.metadata?.draft}
+				<div
+					class="not-prose flex flex-col border-l-[1.5px] border-accent-foreground px-3 font-sans text-sm"
+				>
+					<b class="text-accent-foreground">警告</b>
+					<span>本文为草稿，内容可能不完整或有所变动。</span>
+				</div>
+			{/if}
+			<div
+				class="prose w-full max-w-none wrap-break-word prose-neutral dark:prose-invert prose-headings:scroll-mt-8 prose-headings:decoration-underline prose-a:decoration-underline prose-a:transition-[text-decoration-color] prose-a:hover:decoration-accent-foreground"
+				bind:this={article}
+			>
+				<Content />
+			</div>
 		</div>
 	</div>
 </article>
