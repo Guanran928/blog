@@ -24,11 +24,8 @@
 	);
 </script>
 
-<Card
-	class="flex size-full items-center gap-3"
-	aria-label="Monkeytype typing statistics"
->
-	<SiMonkeytype class="m-2 shrink-0 size-8" />
+<Card class="flex size-full items-center gap-3" aria-label="Monkeytype typing statistics">
+	<SiMonkeytype class="m-2 size-8 shrink-0" />
 
 	<div class="flex flex-1 flex-col">
 		<p class="text-xs font-semibold tracking-wide text-muted-foreground uppercase">MonkeyType</p>
