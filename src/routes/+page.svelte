@@ -83,7 +83,7 @@
 	let { data } = $props();
 </script>
 
-<div class="space-y-5">
+<div class="space-y-8">
 	<section class="space-y-2">
 		<div class="flex items-center justify-between gap-2">
 			<h2 class="text-2xl font-semibold">最新文章</h2>
