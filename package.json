@@ -59,6 +59,7 @@
 		"remark": "^15.0.1",
 		"remark-frontmatter": "^5.0.0",
 		"tailwind-merge": "^3.5.0",
-		"unist-util-visit": "^5.1.0"
+		"unist-util-visit": "^5.1.0",
+		"xmlbuilder2": "^4.0.3"
 	}
 }

@@ -1,5 +1,5 @@
 import { DOMAIN, SITE_NAME } from '$lib/const';
-import { posts } from '$lib/server/posts.js';
+import { posts } from '$lib/server/posts';
 import { Feed } from 'feed';
 
 export async function GET() {
