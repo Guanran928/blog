@@ -8,7 +8,7 @@
 		CounterStrikeInfo,
 		OsuInfo,
 		ValorantInfo,
-		MonkeyTypeInfo,
+		MonkeytypeInfo,
 		MaimaiInfo
 	} from '$lib/component/GameInfo';
 	import Skeleton from '$lib/component/Skeleton.svelte';
@@ -100,9 +100,9 @@
 			{#await data.monkeytype}
 				{@render loading('min-h-[85px]')}
 			{:then data}
-				<MonkeyTypeInfo {data} />
+				<MonkeytypeInfo {data} />
 			{:catch error}
-				{@render failed('min-h-[85px]', 'MonkeyType Error', error)}
+				{@render failed('min-h-[85px]', 'Monkeytype Error', error)}
 			{/await}
 
 			<MaimaiInfo />

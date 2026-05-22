@@ -55,7 +55,7 @@ The project uses the View Transition API for page navigation. Elements set `styl
 
 ### Server-side caching
 
-`src/lib/server/fetchCached.ts` caches external API responses in module-level variables with a 60s TTL. These persist across requests within a single Cloudflare Worker instance (no external cache). Used for osu!, Steam, Valorant, MonkeyType, and Maimai API calls.
+`src/lib/server/fetchCached.ts` caches external API responses in module-level variables with a 60s TTL. These persist across requests within a single Cloudflare Worker instance (no external cache). Used for osu!, Steam, Valorant, Monkeytype, and Maimai API calls.
 
 ### Styling
 

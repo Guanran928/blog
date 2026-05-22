@@ -28,7 +28,7 @@
 	<SiMonkeytype class="m-2 size-8 shrink-0" />
 
 	<div class="flex flex-1 flex-col">
-		<p class="text-xs font-semibold tracking-wide text-muted-foreground uppercase">MonkeyType</p>
+		<p class="text-xs font-semibold text-muted-foreground">Monkeytype</p>
 		<div class="flex items-baseline gap-2">
 			<p><span class="text-3xl leading-none font-bold">{best60.wpm}</span> <span>wpm</span></p>
 			<p class="text-sm text-muted-foreground">

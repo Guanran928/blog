@@ -78,12 +78,12 @@
 
 <Card
 	class="flex size-full items-center gap-3"
-	aria-label="Valorant profile for {data.name}#{data.tag}, currently ranked at {data.rank}"
+	aria-label="VALORANT profile for {data.name}#{data.tag}, currently ranked at {data.rank}"
 >
 	<SiValorant class="m-2 size-8 shrink-0" />
 
 	<div class="flex flex-1 flex-col">
-		<p class="text-xs font-semibold tracking-wide text-muted-foreground uppercase">Valorant</p>
+		<p class="text-xs font-semibold text-muted-foreground">VALORANT</p>
 		<p class="text-xl font-bold">{data.rank}</p>
 		<span class="text-sm text-muted-foreground">
 			{data.name}#{data.tag}

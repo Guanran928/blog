@@ -13,7 +13,7 @@ export const prerender = false;
 let ValCache: CacheEntry<mmr> | null = null;
 let OsuCache: CacheEntry<OsuUser> | null = null;
 let SteamCache: CacheEntry<SteamGame> | null = null;
-let MonkeyTypeCache: CacheEntry<ProfileResponse> | null = null;
+let MonkeytypeCache: CacheEntry<ProfileResponse> | null = null;
 let GithubCache: CacheEntry<GithubContributions> | null = null;
 
 // TODO: use the official Riot API
@@ -56,10 +56,10 @@ function fetchSteam(_fetch: typeof fetch) {
 	);
 }
 
-function fetchMonkeyType(_fetch: typeof fetch) {
+function fetchMonkeytype(_fetch: typeof fetch) {
 	return fetchCached<ProfileResponse, ProfileResponse>(
-		MonkeyTypeCache,
-		(entry) => (MonkeyTypeCache = entry),
+		MonkeytypeCache,
+		(entry) => (MonkeytypeCache = entry),
 		new Request('https://api.monkeytype.com/users/Guanran928/profile', {
 			headers: { Authorization: `ApeKey ${MONKEYTYPE_APE_KEY}` }
 		}),
@@ -137,7 +137,7 @@ export async function load({ fetch }: LayoutServerLoadEvent) {
 	const valPromise = fetchVal(fetch);
 	const osuPromise = fetchOsu(fetch);
 	const csPromise = fetchSteam(fetch);
-	const monkeytypePromise = fetchMonkeyType(fetch);
+	const monkeytypePromise = fetchMonkeytype(fetch);
 	const githubPromise = fetchGithubContributions(fetch);
 
 	return {

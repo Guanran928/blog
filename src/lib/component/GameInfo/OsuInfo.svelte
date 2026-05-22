@@ -32,34 +32,37 @@
 </script>
 
 <a href={`https://osu.ppy.sh/users/${data.user_id}`} aria-label="osu! profile for {data.username}">
-	<Card class="flex size-full flex-col justify-between gap-2">
-		<div class="flex justify-between text-xs font-semibold text-muted-foreground">
-			<p class="flex gap-1 tracking-wide uppercase">
-				<SiOsu class="size-4 shrink-0" />osu!
-			</p>
-			<div class="flex gap-2">
-				<span class="">{data.username}</span>
-				<span class="">{countryCodeToFlag(data.country)}</span>
-			</div>
-		</div>
+	<Card class="flex size-full items-center gap-3">
+		<SiOsu class="m-2 size-8 shrink-0" />
 
-		<div class="grid grid-cols-4 gap-2">
-			<div>
-				<p class="text-sm text-muted-foreground">Global</p>
-				<p class="text-xl font-semibold">#{data.pp_rank}</p>
-			</div>
-			<div>
-				<p class="text-sm text-muted-foreground">Country</p>
-				<p class="text-xl font-semibold">#{data.pp_country_rank}</p>
+		<div class="flex flex-1 flex-col gap-2">
+			<div class="flex justify-between text-xs">
+				<span class="font-semibold text-muted-foreground">osu!</span>
+
+				<div class="flex gap-2 text-muted-foreground">
+					<span class="">{data.username}</span>
+					<span class="">{countryCodeToFlag(data.country)}</span>
+				</div>
 			</div>
 
-			<div>
-				<p class="text-sm text-muted-foreground">pp</p>
-				<p class="text-xl font-semibold">{ppDisplay}</p>
-			</div>
-			<div>
-				<p class="text-sm text-muted-foreground">Acc</p>
-				<p class="text-xl font-semibold">{accPct}%</p>
+			<div class="grid grid-cols-2 gap-x-2 sm:grid-cols-4">
+				<div>
+					<p class="text-xs text-muted-foreground">Global</p>
+					<p class="text-xl font-medium">#{data.pp_rank}</p>
+				</div>
+				<div>
+					<p class="text-xs text-muted-foreground">Country</p>
+					<p class="text-xl font-medium">#{data.pp_country_rank}</p>
+				</div>
+
+				<div>
+					<p class="text-xs text-muted-foreground">pp</p>
+					<p class="text-xl font-medium">{ppDisplay}</p>
+				</div>
+				<div>
+					<p class="text-xs text-muted-foreground">Acc</p>
+					<p class="text-xl font-medium">{accPct}%</p>
+				</div>
 			</div>
 		</div>
 	</Card>
