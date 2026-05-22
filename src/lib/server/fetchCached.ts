@@ -24,6 +24,9 @@ export async function fetchCached<TRaw, T>(
 	}
 
 	if (!res.ok) {
+		if (cache !== null) {
+			return cache.data;
+		}
 		error(res.status, `HTTP ${res.status} ${res.statusText}`);
 	}
 

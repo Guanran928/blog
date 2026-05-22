@@ -1,5 +1,5 @@
 import { fetchCached, type CacheEntry } from '$lib/server/fetchCached';
-import { GITHUB_TOKEN, OSU_API_KEY, STEAM_API_KEY } from '$env/static/private';
+import { GITHUB_TOKEN, MONKEYTYPE_APE_KEY, OSU_API_KEY, STEAM_API_KEY } from '$env/static/private';
 
 import type { mmr } from '$lib/types/valorant';
 import type { OsuUser } from '$lib/types/osu';
@@ -60,7 +60,9 @@ function fetchMonkeyType(_fetch: typeof fetch) {
 	return fetchCached<ProfileResponse, ProfileResponse>(
 		MonkeyTypeCache,
 		(entry) => (MonkeyTypeCache = entry),
-		new URL('https://api.monkeytype.com/users/Guanran928/profile'),
+		new Request('https://api.monkeytype.com/users/Guanran928/profile', {
+			headers: { Authorization: `ApeKey ${MONKEYTYPE_APE_KEY}` }
+		}),
 		(json) => json,
 		undefined,
 		_fetch
@@ -112,7 +114,8 @@ function fetchGithubContributions(_fetch: typeof fetch) {
 		(json) => {
 			const contributions = json.data?.user?.contributionsCollection;
 			const calendar = contributions?.contributionCalendar;
-			if (!calendar) throw new Error(json.errors?.[0]?.message ?? 'Missing GitHub contribution calendar');
+			if (!calendar)
+				throw new Error(json.errors?.[0]?.message ?? 'Missing GitHub contribution calendar');
 
 			return {
 				data: Object.fromEntries(
