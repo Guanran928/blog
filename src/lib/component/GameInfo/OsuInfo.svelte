@@ -25,48 +25,41 @@
 		return flag;
 	}
 
-	function formatDuration(sec: number) {
-		const days = Math.floor(sec / 86400);
-		const hours = Math.floor((sec % 86400) / 3600);
-		const minutes = Math.floor((sec % 3600) / 60);
-
-		return new Intl.DurationFormat('en', { style: 'narrow' }).format({ days, hours, minutes });
-	}
-
 	let { data } = $props();
+
+	let accPct = $derived(Number(data.accuracy).toFixed(2));
+	let ppDisplay = $derived(Number(data.pp_raw).toLocaleString());
 </script>
 
 <a href={`https://osu.ppy.sh/users/${data.user_id}`} aria-label="osu! profile for {data.username}">
-	<Card class="flex w-fit flex-col">
-		<div class="flex justify-between align-bottom">
-			<div class="space-x-1.5">
-				<span class="text-xl">{data.username}</span><span>{countryCodeToFlag(data.country)}</span>
+	<Card class="flex size-full flex-col justify-between gap-2">
+		<div class="flex justify-between text-xs font-semibold text-muted-foreground">
+			<p class="flex gap-1 tracking-wide uppercase">
+				<SiOsu class="size-4 shrink-0" />osu!
+			</p>
+			<div class="flex gap-2">
+				<span class="">{data.username}</span>
+				<span class="">{countryCodeToFlag(data.country)}</span>
 			</div>
-
-			<SiOsu />
 		</div>
 
-		<div
-			class="grid grid-cols-4 gap-4 [&>div>p:first-child]:text-sm [&>div>p:last-child]:text-xl [&>div>p:last-child]:text-muted-foreground"
-		>
+		<div class="grid grid-cols-4 gap-2">
 			<div>
-				<p>Global Ranking</p>
-				<p>#{data.pp_rank}</p>
+				<p class="text-sm text-muted-foreground">Global</p>
+				<p class="text-xl font-semibold">#{data.pp_rank}</p>
+			</div>
+			<div>
+				<p class="text-sm text-muted-foreground">Country</p>
+				<p class="text-xl font-semibold">#{data.pp_country_rank}</p>
 			</div>
 
 			<div>
-				<p>Country Ranking</p>
-				<p>#{data.pp_country_rank}</p>
+				<p class="text-sm text-muted-foreground">pp</p>
+				<p class="text-xl font-semibold">{ppDisplay}</p>
 			</div>
-
 			<div>
-				<p>pp</p>
-				<p>{data.pp_raw}</p>
-			</div>
-
-			<div>
-				<p>Total Play Time</p>
-				<p>{formatDuration(Number.parseInt(data.total_seconds_played))}</p>
+				<p class="text-sm text-muted-foreground">Acc</p>
+				<p class="text-xl font-semibold">{accPct}%</p>
 			</div>
 		</div>
 	</Card>

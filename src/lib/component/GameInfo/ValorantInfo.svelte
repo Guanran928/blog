@@ -35,6 +35,8 @@
 
 	import radiant from '$lib/assets/ranks/radiant.svg';
 
+	import SiValorant from '@icons-pack/svelte-simple-icons/icons/SiValorant';
+
 	const rankMap: Record<string, string> = {
 		'Iron 1': iron1,
 		'Iron 2': iron2,
@@ -75,16 +77,18 @@
 </script>
 
 <Card
-	class="flex w-fit items-center gap-2"
+	class="flex size-full items-center gap-3"
 	aria-label="Valorant profile for {data.name}#{data.tag}, currently ranked at {data.rank}"
 >
-	<img src={rankMap[data.rank]} alt="" class="size-12" />
-	<div class="flex flex-col">
-		<span class="font-medium">
-			{data.name}<span class="text-muted-foreground">#{data.tag}</span>
-		</span>
+	<SiValorant class="m-2 size-8 shrink-0" />
+
+	<div class="flex flex-1 flex-col">
+		<p class="text-xs font-semibold tracking-wide text-muted-foreground uppercase">Valorant</p>
+		<p class="text-xl font-bold">{data.rank}</p>
 		<span class="text-sm text-muted-foreground">
-			{data.rank}
+			{data.name}#{data.tag}
 		</span>
 	</div>
+
+	<img src={rankMap[data.rank]} alt="" class="m-2 size-10 shrink-0" />
 </Card>

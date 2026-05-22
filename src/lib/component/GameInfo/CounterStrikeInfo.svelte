@@ -16,18 +16,19 @@
 
 <a
 	href="https://steamcommunity.com/profiles/76561198855505856"
+	class="size-full"
 	aria-label="Counter-Strike 2 - {playtime} hrs on record, last played {dateLastPlayed}"
 >
-	<Card class="flex w-64 flex-col">
-		<p>Counter-Strike 2</p>
-		<div class="flex justify-between">
-			<SiCounterstrike class="mt-auto size-8" />
-			<div>
-				<p class="text-end">{playtime} hrs on record</p>
-				<p class="text-end">
-					last played on {dateLastPlayed}
-				</p>
-			</div>
+	<Card class="flex size-full items-center gap-3">
+		<SiCounterstrike class="m-2 size-8 shrink-0" />
+		<div class="flex flex-col justify-between">
+			<p class="text-xs font-semibold tracking-wide text-muted-foreground uppercase">
+				Counter-Strike 2
+			</p>
+			<p class="text-2xl font-bold">
+				{playtime}<span class="ml-0.5 text-base font-normal text-muted-foreground">hrs</span>
+			</p>
+			<p class="text-xs text-muted-foreground">last played {dateLastPlayed}</p>
 		</div>
 	</Card>
 </a>

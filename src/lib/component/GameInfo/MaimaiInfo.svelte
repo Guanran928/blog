@@ -7,23 +7,31 @@
 	let error = $state(false);
 </script>
 
-{#if !loaded}
-	{#if !error}
-		<Card class="flex h-[48px] w-[240px] items-center justify-center font-sans"><Skeleton /></Card>
-	{:else}
-		<Card class="flex h-[48px] w-[240px] items-center justify-center gap-1 font-sans">
-			<Badge variant="destructive">Error</Badge>
-			Image loading failed
-		</Card>
-	{/if}
-{/if}
+<div class="size-full">
+	<Card class="flex size-full items-center justify-center">
+		{#if loaded && !error}
+			<img
+				src="/api/maimai"
+				alt="maimai DX score card"
+				width="240"
+				height="48"
+				onerror={() => (error = true)}
+			/>
+		{:else if error}
+			<div class="flex items-center gap-1 font-sans">
+				<Badge variant="destructive">Error</Badge>
+				<span class="text-sm">Image loading failed</span>
+			</div>
+		{:else}
+			<Skeleton class="h-12 w-60 shrink-0" />
+		{/if}
+	</Card>
 
-<img
-	src="/api/maimai"
-	alt="maimai DX score card"
-	width="240"
-	height="48"
-	class:hidden={!loaded || error}
-	onload={() => (loaded = true)}
-	onerror={() => (error = true)}
-/>
+	<img
+		src="/api/maimai"
+		alt=""
+		class="hidden"
+		onload={() => (loaded = true)}
+		onerror={() => (error = true)}
+	/>
+</div>

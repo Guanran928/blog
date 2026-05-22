@@ -6,7 +6,7 @@
 
 <enhanced:img alt="163 邮箱" src="./163.png" />
 
-## 一些游戏
+## 数据
 
 <!-- 
   HACK: code inside ./+layout.svelte

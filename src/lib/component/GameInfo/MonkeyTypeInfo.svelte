@@ -15,33 +15,35 @@
 	}
 
 	let { data } = $props();
+
+	let best60 = $derived(data.data.personalBests.time['60'][0]);
+	let testsDisplay = $derived(data.data.typingStats.completedTests.toLocaleString());
+	let timeDisplay = $derived(formatDuration(data.data.typingStats.timeTyping));
+	let streakDisplay = $derived(
+		data.data.streak > 0 ? `${data.data.streak} day${data.data.streak !== 1 ? 's' : ''}` : '—'
+	);
 </script>
 
-<Card class="flex w-fit space-x-6" aria-label="Monkeytype typing statistics">
-	<div class="space-y-1">
-		<div>
-			<p class="text-sm text-muted-foreground">tests started</p>
-			<p class="text-xl">{data.data.typingStats.startedTests}</p>
-		</div>
-		<div>
-			<p class="text-sm text-muted-foreground">test completed</p>
-			<p class="text-xl">{data.data.typingStats.completedTests}</p>
-		</div>
-		<div>
-			<p class="text-sm text-muted-foreground">time typing</p>
-			<p class="text-xl">{formatDuration(data.data.typingStats.timeTyping)}</p>
-		</div>
-	</div>
-	<div class="relative flex flex-col justify-center">
-		<SiMonkeytype class="absolute top-0 right-0" />
-		<div class="flex flex-col items-center">
-			<p class="text-sm text-muted-foreground">60 seconds</p>
-			<p class="text-2xl">
-				{data.data.personalBests.time['60'][0].wpm}
+<Card
+	class="flex size-full items-center gap-3"
+	aria-label="Monkeytype typing statistics"
+>
+	<SiMonkeytype class="m-2 shrink-0 size-8" />
+
+	<div class="flex flex-1 flex-col">
+		<p class="text-xs font-semibold tracking-wide text-muted-foreground uppercase">MonkeyType</p>
+		<div class="flex items-baseline gap-2">
+			<p><span class="text-3xl leading-none font-bold">{best60.wpm}</span> <span>wpm</span></p>
+			<p class="text-sm text-muted-foreground">
+				{Math.floor(best60.acc)}% acc
 			</p>
-			<p class="text-muted-foreground">
-				{Math.floor(data.data.personalBests.time['60'][0].acc)}%
-			</p>
+		</div>
+		<div class="flex gap-3 text-xs text-muted-foreground">
+			<span>{testsDisplay} tests</span>
+			<span class="text-border">|</span>
+			<span>{timeDisplay} typed</span>
+			<span class="text-border">|</span>
+			<span>streak {streakDisplay}</span>
 		</div>
 	</div>
 </Card>

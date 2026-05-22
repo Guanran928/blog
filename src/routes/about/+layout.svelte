@@ -16,12 +16,13 @@
 	import Heatmap from '$lib/component/Heatmap.svelte';
 	import { GITHUB_PROFILE } from '$lib/const';
 	import SiGithub from '@icons-pack/svelte-simple-icons/icons/SiGithub';
+	import { cn } from '$lib/cn';
 </script>
 
 <article
 	class="prose max-w-none pt-3 wrap-break-word prose-neutral dark:prose-invert prose-headings:scroll-mt-8 prose-headings:decoration-underline prose-a:decoration-underline prose-a:transition-[text-decoration-color] prose-a:hover:decoration-accent-foreground"
 >
-	<div class="not-prose flex flex-row items-center gap-4 pb-8">
+	<div class="not-prose flex flex-row items-center gap-4">
 		<img
 			src="https://avatars.githubusercontent.com/u/68757440?s=192"
 			alt="Guanran928"
@@ -35,83 +36,86 @@
 		</div>
 	</div>
 
-	<Card class="not-prose">
-		<div class="flex items-center justify-between gap-4 pb-3 font-sans text-sm">
-			<a href={GITHUB_PROFILE.url} class="flex shrink-0 items-center gap-2 no-underline">
-				<SiGithub class="size-4" />
-				{GITHUB_PROFILE.username}
-			</a>
-			{#await data.github}
-				<Skeleton class="h-5 w-44" />
-			{:then github}
-				<span class="w-44 text-right text-muted-foreground">
-					{github.total} contributions in {github.year}
-				</span>
-			{/await}
-		</div>
-
-		{#await data.github}
-			<Heatmap data={{}} loading />
-		{:then github}
-			<Heatmap data={github.data} year={github.year} />
-		{:catch error}
-			<div class="flex min-h-30 items-center justify-center gap-1 font-sans">
-				<Badge variant="destructive">GitHub Error</Badge>
-				{error.message}
-			</div>
-		{/await}
-	</Card>
-
 	{@render children()}
 
-	<div class="not-prose space-y-1">
-		<div class="flex flex-col gap-4">
-			<MaimaiInfo />
+	<div class="not-prose">
+		{#snippet loading(cls: string)}
+			<Card class={cn('flex size-full items-center justify-center', cls)}
+				><Skeleton class="size-full" /></Card
+			>
+		{/snippet}
 
-			{#snippet loading(cls: string)}
-				<Card class="flex {cls} items-center justify-center p-1 font-sans"
-					><Skeleton class="size-full" /></Card
-				>
-			{/snippet}
+		{#snippet failed(cls: string, error: Error)}
+			<Card class={cn('flex size-full items-center justify-center gap-1 font-sans', cls)}>
+				<Badge variant="destructive">Error</Badge>
+				{error.message}
+			</Card>
+		{/snippet}
 
-			{#snippet failed(cls: string, error: Error)}
-				<Card class="flex {cls} items-center justify-center gap-1 font-sans">
-					<Badge variant="destructive">Error</Badge>
-					{error.message}
-				</Card>
-			{/snippet}
+		<div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+			<Card class="sm:col-span-2">
+				<div class="flex items-center justify-between gap-4 pb-3 font-sans text-sm">
+					<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
+					<a href={GITHUB_PROFILE.url} class="flex shrink-0 items-center gap-2 no-underline">
+						<SiGithub class="size-4" />
+						{GITHUB_PROFILE.username}
+					</a>
+					{#await data.github}
+						<Skeleton class="h-5 w-44" />
+					{:then github}
+						<span class="w-44 text-right text-muted-foreground">
+							{github.total} contributions in {github.year}
+						</span>
+					{/await}
+				</div>
+
+				{#await data.github}
+					<Heatmap data={{}} loading />
+				{:then github}
+					<Heatmap data={github.data} year={github.year} />
+				{:catch error}
+					<div class="flex min-h-30 items-center justify-center gap-1 font-sans">
+						<Badge variant="destructive">GitHub Error</Badge>
+						{error.message}
+					</div>
+				{/await}
+			</Card>
 
 			{#await data.val}
-				{@render loading('h-[65px] w-[185px]')}
+				{@render loading('min-h-[80px]')}
 			{:then data}
 				<ValorantInfo {data} />
 			{:catch error}
-				{@render failed('h-[65px] w-[185px]', error)}
+				{@render failed('min-h-[80px]', error)}
 			{/await}
 
 			{#await data.cs}
-				{@render loading('h-[100px] w-[255px]')}
+				{@render loading('min-h-[80px]')}
 			{:then data}
 				<CounterStrikeInfo {data} />
 			{:catch error}
-				{@render failed('h-[100px] w-[255px]', error)}
-			{/await}
-
-			{#await data.osu}
-				{@render loading('h-[95px] w-[495px]')}
-			{:then data}
-				<OsuInfo {data} />
-			{:catch error}
-				{@render failed('h-[95px] w-[495px]', error)}
+				{@render failed('min-h-[80px]', error)}
 			{/await}
 
 			{#await data.monkeytype}
-				{@render loading('h-[170px] w-[210px]')}
+				{@render loading('min-h-[85px]')}
 			{:then data}
 				<MonkeyTypeInfo {data} />
 			{:catch error}
-				{@render failed('h-[170px] w-[210px]', error)}
+				{@render failed('min-h-[85px]', error)}
 			{/await}
+
+			<MaimaiInfo />
+
+			<div class="sm:col-span-2">
+				{#await data.osu}
+					{@render loading('min-h-[95px]')}
+				{:then data}
+					<OsuInfo {data} />
+				{:catch error}
+					{@render failed('min-h-[95px]', error)}
+				{/await}
+			</div>
 		</div>
 	</div>
 </article>
