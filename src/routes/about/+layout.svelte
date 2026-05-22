@@ -52,7 +52,7 @@
 			</Card>
 		{/snippet}
 
-		<div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+		<div class="grid grid-cols-1 gap-2 sm:grid-cols-2">
 			<Card class="sm:col-span-2">
 				<div class="flex items-center justify-between gap-4 pb-3 font-sans text-sm">
 					<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
