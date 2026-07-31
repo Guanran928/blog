@@ -91,8 +91,14 @@
 
 			{#await data.cs}
 				{@render loading('min-h-[80px]')}
-			{:then data}
-				<CounterStrikeInfo {data} />
+			{:then cs}
+				{#await data.leetify}
+					<CounterStrikeInfo data={cs} />
+				{:then leetify}
+					<CounterStrikeInfo data={cs} premier={leetify.premier} />
+				{:catch}
+					<CounterStrikeInfo data={cs} />
+				{/await}
 			{:catch error}
 				{@render failed('min-h-[80px]', 'Counter-Strike 2 Error', error)}
 			{/await}

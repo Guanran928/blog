@@ -4,6 +4,7 @@ import { GITHUB_TOKEN, MONKEYTYPE_APE_KEY, OSU_API_KEY, STEAM_API_KEY } from '$e
 import type { mmr } from '$lib/types/valorant';
 import type { OsuUser } from '$lib/types/osu';
 import type { SteamGame, SteamOwnedGames } from '$lib/types/steam';
+import type { LeetifyProfile } from '$lib/types/leetify';
 import type { ProfileResponse } from '$lib/types/monkeytype';
 import type { GithubContributions, GithubContributionsResponse } from '$lib/types/github';
 import type { LayoutServerLoadEvent } from './$types';
@@ -15,6 +16,7 @@ let OsuCache: CacheEntry<OsuUser> | null = null;
 let SteamCache: CacheEntry<SteamGame> | null = null;
 let MonkeytypeCache: CacheEntry<ProfileResponse> | null = null;
 let GithubCache: CacheEntry<GithubContributions> | null = null;
+let LeetifyCache: CacheEntry<{ premier: number }> | null = null;
 
 // TODO: use the official Riot API
 function fetchVal(_fetch: typeof fetch) {
@@ -133,10 +135,25 @@ function fetchGithubContributions(_fetch: typeof fetch) {
 	);
 }
 
+function fetchLeetify(_fetch: typeof fetch) {
+	const url = new URL('https://api-public.cs-prod.leetify.com/v3/profile');
+	url.search = new URLSearchParams({ steam64_id: '76561198855505856' }).toString();
+
+	return fetchCached<LeetifyProfile, { premier: number }>(
+		LeetifyCache,
+		(entry) => (LeetifyCache = entry),
+		url,
+		(json) => (json.ranks?.premier != null ? { premier: json.ranks.premier } : null),
+		undefined,
+		_fetch
+	);
+}
+
 export async function load({ fetch }: LayoutServerLoadEvent) {
 	const valPromise = fetchVal(fetch);
 	const osuPromise = fetchOsu(fetch);
 	const csPromise = fetchSteam(fetch);
+	const leetifyPromise = fetchLeetify(fetch);
 	const monkeytypePromise = fetchMonkeytype(fetch);
 	const githubPromise = fetchGithubContributions(fetch);
 
@@ -144,6 +161,7 @@ export async function load({ fetch }: LayoutServerLoadEvent) {
 		val: valPromise,
 		osu: osuPromise,
 		cs: csPromise,
+		leetify: leetifyPromise,
 		monkeytype: monkeytypePromise,
 		github: githubPromise
 	};
