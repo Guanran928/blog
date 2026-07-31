@@ -149,7 +149,7 @@
 			<Toc headings={data.headings} {article} class="sticky top-8 hidden sm:order-last sm:block" />
 		{/if}
 
-		<div class="flex min-w-0 flex-col gap-8">
+		<div class="flex w-full min-w-0 flex-col gap-8">
 			{#if data.content.metadata?.draft}
 				<div
 					class="not-prose flex flex-col border-l-[1.5px] border-accent-foreground px-3 font-sans text-sm"
