@@ -3,6 +3,7 @@
 	import Card from '$lib/component/Card.svelte';
 	import type { SteamGame } from '$lib/types/steam';
 
+	// https://github.com/SteamTracking/GameTracking-CS2/blob/d9a01ef158cfee22512acc6980bf4c8d5c0fb654/game/csgo/pak01_dir/panorama/styles/csgostyles.css#L97-L103
 	const TIER_COLORS = ['#b0c3d9', '#8cc6ff', '#6a7dff', '#c166ff', '#f03cff', '#eb4b4b', '#ffd700'];
 
 	let { data, premier }: { data: SteamGame; premier?: number } = $props();
@@ -35,21 +36,37 @@
 		</div>
 
 		{#if premier != null}
-			<span
-				class="m-2 flex h-7 w-18 shrink-0 items-center justify-center border-2 border-l-4 select-none"
-				style:background="color-mix(in srgb, {tierColor} 50%, black)"
-				style:border-color={tierColor}
-				style:transform="skewX(-10deg)"
-				title="CS rating {premier}"
-				aria-hidden="true"
-			>
+			<div>
 				<span
-					class="font-sans leading-none font-semibold"
-					style:text-box="trim-both cap"
-					style:color="color-mix(in srgb, {tierColor} 50%, white)"
-					style:text-shadow="0 1px 1px rgb(0 0 0 / 0.6)">{premier}</span
+					id="rating"
+					class="m-2 flex w-20 aspect-178/64 shrink-0 items-center justify-center border-l-4 pl-1 select-none skew-x-[-11.5deg]"
+					style:--tier-color={tierColor}
+					style:background="color-mix(in hsl, {tierColor} 45%, black)"
+					style:border-color="color-mix(in hsl, {tierColor} 80%, black)"
+					title="CS rating {premier}"
+					aria-hidden="true"
 				>
-			</span>
+					<span
+						class="font-sans leading-none font-bold"
+						style="text-box: trim-both cap alphabetic;"
+						style:color="color-mix(in hsl, {tierColor} 90%, black)"
+					>
+						{premier.toLocaleString('en-US')}
+					</span>
+				</span>
+			</div>
 		{/if}
 	</Card>
 </a>
+
+<style>
+#rating:before {
+  content: " ";
+  position: absolute;
+  z-index: -1;
+  top: 0px;
+  left: 1px;
+  bottom: 0px;
+  border: 2px solid color-mix(in hsl, var(--tier-color) 80%, black);
+}
+</style>
