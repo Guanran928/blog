@@ -1,6 +1,5 @@
 <script lang="ts">
 	import 'prism-themes/themes/prism-gruvbox-dark.min.css';
-	import { onMount } from 'svelte';
 	import Toc from '$lib/component/Toc.svelte';
 	import TableOfContents from '@lucide/svelte/icons/table-of-contents';
 	import X from '@lucide/svelte/icons/x';
@@ -12,58 +11,6 @@
 	let open = $state(false);
 	let Content = $derived(data.content.default);
 	let article = $state<HTMLElement | null>(null);
-	const copyResetTimers = new WeakMap<HTMLButtonElement, ReturnType<typeof setTimeout>>();
-
-	async function copyCode(event: Event) {
-		if (!(event.target instanceof Element)) return;
-
-		const button = event.target.closest<HTMLButtonElement>('[data-copy-code]');
-		if (!button) return;
-
-		const code = button.closest('pre')?.querySelector('code')?.textContent;
-		if (!code) return;
-
-		await navigator.clipboard.writeText(code);
-
-		const resetTimer = copyResetTimers.get(button);
-		if (resetTimer) clearTimeout(resetTimer);
-
-		button.dataset.copied = 'true';
-		copyResetTimers.set(
-			button,
-			setTimeout(() => {
-				delete button.dataset.copied;
-				copyResetTimers.delete(button);
-			}, 1200)
-		);
-	}
-
-	function addCopyButtons() {
-		for (const pre of article?.querySelectorAll<HTMLPreElement>('pre:has(> code)') ?? []) {
-			if (pre.querySelector('[data-copy-code]')) continue;
-
-			pre.classList.add('group', 'relative');
-			pre.dataset.language =
-				[...pre.classList, ...pre.querySelector('code')!.classList]
-					.find((className) => className.startsWith('language-'))
-					?.replace('language-', '') ?? 'text';
-
-			const button = document.createElement('button');
-			button.type = 'button';
-			button.ariaLabel = 'Copy code';
-			button.dataset.copyCode = 'true';
-			button.className =
-				'copy-code-button absolute top-11 right-2 z-10 border border-border bg-surface px-2 py-1 font-sans text-xs opacity-0 shadow-xs transition-opacity group-hover:opacity-100 focus-visible:opacity-100';
-
-			pre.insertBefore(button, pre.firstChild);
-		}
-	}
-
-	onMount(() => {
-		addCopyButtons();
-		article?.addEventListener('click', copyCode);
-		return () => article?.removeEventListener('click', copyCode);
-	});
 
 	const menuTransition = (_node: Element, { direction }: { direction: 'in' | 'out' }) => ({
 		duration: 150,
@@ -173,61 +120,5 @@
 
 	:global(.footnote-backref) {
 		@apply pl-2;
-	}
-
-	:global(pre[data-language]) {
-		@apply pt-10;
-	}
-
-	:global(pre[data-language]::before) {
-		content: attr(data-language);
-		@apply absolute top-0 right-0 left-0 border-b border-white/10 px-4 py-2 font-sans text-xs text-white/60 uppercase;
-	}
-
-	:global(.copy-code-button) {
-		@apply h-7 min-w-18 overflow-hidden text-transparent;
-		transform: scale(1);
-		transition:
-			opacity 150ms ease,
-			transform 150ms ease;
-	}
-
-	:global(.copy-code-button:active) {
-		transform: scale(0.97);
-	}
-
-	:global(.copy-code-button::before),
-	:global(.copy-code-button::after) {
-		@apply absolute inset-0 flex items-center justify-center gap-1.5 text-foreground;
-		transition:
-			opacity 150ms ease,
-			transform 150ms ease,
-			filter 150ms ease;
-	}
-
-	:global(.copy-code-button::before) {
-		content: '⧉ Copy';
-		opacity: 1;
-		filter: blur(0);
-		transform: scale(1);
-	}
-
-	:global(.copy-code-button::after) {
-		content: '✓ Copied';
-		opacity: 0;
-		filter: blur(4px);
-		transform: scale(0.8);
-	}
-
-	:global(.copy-code-button[data-copied='true']::before) {
-		opacity: 0;
-		filter: blur(4px);
-		transform: scale(0.8);
-	}
-
-	:global(.copy-code-button[data-copied='true']::after) {
-		opacity: 1;
-		filter: blur(0);
-		transform: scale(1);
 	}
 </style>
