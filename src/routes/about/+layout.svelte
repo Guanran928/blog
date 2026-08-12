@@ -45,9 +45,9 @@
 			>
 		{/snippet}
 
-		{#snippet failed(cls: string, badgeString: string, error: Error)}
+		{#snippet failed(cls: string, error: Error)}
 			<Card class={cn('flex size-full items-center justify-center gap-1 font-sans', cls)}>
-				<Badge variant="destructive">{badgeString}</Badge>
+				<Badge variant="destructive">Error</Badge>
 				{error.message}
 			</Card>
 		{/snippet}
@@ -86,7 +86,7 @@
 			{:then data}
 				<ValorantInfo {data} />
 			{:catch error}
-				{@render failed('min-h-[80px]', 'VALORANT Error', error)}
+				{@render failed('min-h-[80px]', error)}
 			{/await}
 
 			{#await data.cs}
@@ -100,7 +100,7 @@
 					<CounterStrikeInfo data={cs} />
 				{/await}
 			{:catch error}
-				{@render failed('min-h-[80px]', 'Counter-Strike 2 Error', error)}
+				{@render failed('min-h-[80px]', error)}
 			{/await}
 
 			{#await data.monkeytype}
@@ -108,7 +108,7 @@
 			{:then data}
 				<MonkeytypeInfo {data} />
 			{:catch error}
-				{@render failed('min-h-[85px]', 'Monkeytype Error', error)}
+				{@render failed('min-h-[85px]', error)}
 			{/await}
 
 			<MaimaiInfo />
@@ -119,7 +119,7 @@
 				{:then data}
 					<OsuInfo {data} />
 				{:catch error}
-					{@render failed('min-h-[95px]', 'osu! error', error)}
+					{@render failed('min-h-[95px]', error)}
 				{/await}
 			</div>
 		</div>
