@@ -2,7 +2,7 @@
 @plugin '@tailwindcss/typography';
 
 html {
-	@apply scroll-smooth;
+	@apply scroll-smooth scrollbar-gutter-both;
 }
 
 body {
